@@ -95,11 +95,7 @@ menubar_visible=1
 free_space=1
 horizontal_split=0
 vertical_equal=1
-<<<<<<< HEAD
 left_panel_size=102
-=======
-left_panel_size=96
->>>>>>> 5a9579ab5f9e96f50d421330cb826914e729e8e0
 horizontal_equal=1
 top_panel_size=1
 
