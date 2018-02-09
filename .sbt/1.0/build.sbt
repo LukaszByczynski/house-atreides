@@ -1,2 +1,0 @@
-ensimeIgnoreMissingDirectories := true
-

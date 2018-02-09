@@ -1,0 +1,3 @@
+# use `dircolors -p` to see what to customise
+DIR 00;33 # directory
+LINK 00;35 # symbolic link

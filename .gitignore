@@ -5,3 +5,17 @@
 !/.sbt/0.13/plugins/ensime.sbt
 !/.sbt/0.13/plugins/updates.sbt
 !/.config/mc/**/*.ini
+
+target/
+
+.ensime_cache/
+.ensime_snapshot/
+.ensime
+ensime.sbt
+local.sbt
+.ensime-server.conf
+
+.history
+.projectile
+.dir-locals.el
+TAGS
