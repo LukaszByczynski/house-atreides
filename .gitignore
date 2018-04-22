@@ -1,5 +1,5 @@
 /*
-!/.emacs.d/init.el
+!/.emacs.d/*.el
 !/.sbt/0.13/global.sbt
 !/.sbt/0.13/plugins/coursier.sbt
 !/.sbt/0.13/plugins/ensime.sbt
@@ -11,8 +11,6 @@ target/
 .ensime_cache/
 .ensime_snapshot/
 .ensime
-ensime.sbt
-local.sbt
 .ensime-server.conf
 
 .history
