@@ -36,6 +36,7 @@
   initial-scratch-message nil
   enable-local-variables t
   create-lockfiles nil
+  ansi-color-for-comint-mode t
   make-backup-files nil
   load-prefer-newer t
   custom-file (expand-file-name "custom.el" user-emacs-directory)
@@ -179,3 +180,11 @@
 (setq scroll-conservatively 401
         scroll-margin 0
         scroll-preserve-screen-position 't)
+
+;; Use emacs terminfo, not system terminfo
+(setq system-uses-terminfo nil)
+
+;; Use utf-8 in ansi-term
+(defadvice ansi-term (after advise-ansi-term-coding-system)
+    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+(ad-activate 'ansi-term)

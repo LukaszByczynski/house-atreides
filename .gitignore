@@ -8,8 +8,8 @@
 
 target/
 
-.ensime_cache/
-.ensime_snapshot/
+.ensime_cache
+.ensime_snapshot
 .ensime
 .ensime-server.conf
 

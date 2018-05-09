@@ -5,6 +5,6 @@ shellPrompt := { state => "> " }
 
 ensimeServerFindUsages in ThisBuild := true
 ensimeIgnoreMissingDirectories in ThisBuild := true
-ensimeJavaFlags ++= Seq("-Xmx2g", "-XX:+PerfDisableSharedMem")
+ensimeJavaFlags ++= Seq("-Xmx1g", "-XX:+PerfDisableSharedMem")
 
 addCommandAlias("pluginUpdates", "; reload plugins; dependencyUpdates; reload return")
