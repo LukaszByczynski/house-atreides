@@ -177,14 +177,10 @@
 (load-user-file "scala.el")
 (load-user-file "keymap.el")
 
-(setq scroll-conservatively 401
-        scroll-margin 0
-        scroll-preserve-screen-position 't)
-
 ;; Use emacs terminfo, not system terminfo
-(setq system-uses-terminfo nil)
+;;(setq system-uses-terminfo nil)
 
 ;; Use utf-8 in ansi-term
-(defadvice ansi-term (after advise-ansi-term-coding-system)
-    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
-(ad-activate 'ansi-term)
+;;(defadvice ansi-term (after advise-ansi-term-coding-system)
+;;    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+;;(ad-activate 'ansi-term)

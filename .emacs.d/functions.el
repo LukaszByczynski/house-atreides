@@ -1,5 +1,5 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; This section is for generic interactive convenience methods.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;; This section is for generic interactive convenience methods.
 ;; Arguably could be uploaded to MELPA as package 'fommil-utils.
 ;; References included where shamelessly stolen.
 (defun indent-buffer ()
@@ -10,18 +10,19 @@
     (indent-region (point-min) (point-max) nil)
     (untabify (point-min) (point-max))))
 
-(defun unfill-paragraph ('optional region)
-  ;; http://www.emacswiki.org/emacs/UnfillParagraph
-  "Transforms a paragraph in REGION into a single line of text."
-  (interactive)
-  (let ((fill-column (point-max)))
+(defun unfill-paragraph (&optional region)
+  "Takes a multi-line paragraph and makes it into a single line of text."
+  (interactive (progn (barf-if-buffer-read-only) '(t)))
+  (let ((fill-column (point-max))
+        ;; This would override `fill-column' if it's an integer.
+        (emacs-lisp-docstring-fill-column t))
     (fill-paragraph nil region)))
 
 (defun unfill-buffer ()
-  "Unfill the buffer for function `visual-line-mode'."
-  (interactive)
-  (let ((fill-column (point-max)))
-    (fill-region 0 (point-max))))
+ "Unfill the buffer for function `visual-line-mode'."
+ (interactive)
+ (let ((fill-column (point-max)))
+   (fill-region 0 (point-max))))
 
 (defun revert-buffer-no-confirm ()
   ;; http://www.emacswiki.org/emacs-en/download/misc-cmds.el
@@ -108,14 +109,14 @@ very minimal set."
   "Smartparens restriction on `SYM' for C-derived parenthesis."
   (sp-restrict-to-pairs-interactive "{([" sym))
 
-(defun plist-merge ('rest plists)
-  "Create a single property list from all PLISTS.
-Inspired by `org-combine-plists'."
-  (let ((rtn (pop plists)))
-    (dolist (plist plists rtn)
-      (setq rtn (plist-put rtn
-                           (pop plist)
-                           (pop plist))))))
+;; (defun plist-merge ('rest plists)
+;;   "Create a single property list from all PLISTS.
+;; Inspired by `org-combine-plists'."
+;;   (let ((rtn (pop plists)))
+;;     (dolist (plist plists rtn)
+;;       (setq rtn (plist-put rtn
+;;                            (pop plist)
+;;                            (pop plist))))))
 
 (defun dot-emacs ()
   "Go directly to .emacs, do not pass Go, do not collect $200."

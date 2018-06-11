@@ -7,7 +7,7 @@
 
 (use-package scala-mode
   :pin melpa)
-      
+
 (use-package ensime
   :defer t
   :pin melpa
@@ -28,15 +28,15 @@
 (use-package sbt-mode
   :commands sbt-start sbt-command
   :pin melpa
-  :init
-  (setq
-   sbt:sbt-history-file ".history"
-   sbt:ansi-support t
-   sbt:prefer-nested-projects t
-   sbt:scroll-to-bottom-on-output nil
-   sbt:program-options '("-Djline.terminal=auto")
-   sbt:default-command "test:compile")
-  (put 'sbt:default-command 'safe-local-variable #'stringp)
+;  :init
+;  (setq
+ ;  sbt:sbt-history-file ".history"
+ ;  sbt:ansi-support t
+ ;  sbt:prefer-nested-projects t
+;   sbt:scroll-to-bottom-on-output nil
+ ;  sbt:program-options '("-Djline.terminal=auto")
+;   sbt:default-command "test:compile")
+;  (put 'sbt:default-command 'safe-local-variable #'stringp)
   :config
   ;; WORKAROUND: https://github.com/hvesalai/sbt-mode/issues/31
   ;; allows using SPACE when in the minibuffer
