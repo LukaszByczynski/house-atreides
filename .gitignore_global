@@ -1,0 +1,15 @@
+*~
+.DS_Store
+.ensime_cache
+.ensime_snapshot
+.ensime
+.ensime-server.conf
+
+.history
+.projectile
+.dir-locals.el
+TAGS
+
+
+.idea/
+target/
