@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/lukaszbyczynski/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/opt/protobuf@2.5/bin:~/.local/bin:$PATH"
 
 alias hh=hstr                    # hh to be alias for hstr
-export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HISTFILE=~/.zsh_history   # ensure history file visibility
 export HSTR_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
