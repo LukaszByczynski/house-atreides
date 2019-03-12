@@ -105,6 +105,8 @@ export HSTR_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
 alias ff=fzf
+alias vs="code ."
+alias sm="smerge ."
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
