@@ -100,5 +100,7 @@ bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
 alias ff=fzf
 alias vs="code ."
 alias sm="smerge ."
+alias bs="brew services start scalacenter/bloop/bloop"
+alias bh="brew services stop scalacenter/bloop/bloop"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
