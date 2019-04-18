@@ -1,6 +1,5 @@
 ;; helm configuration
 (use-package helm
-  :ensure t
   :bind(("M-x" . helm-M-x)
     ("C-x C-m" . helm-M-x)
     ("C-c C-m" . helm-M-x)
@@ -8,8 +7,7 @@
     ("s-N" . helm-find-files)))
 
 ;; monokai-theme
-(use-package monokai-theme
-  :ensure t)
+(use-package monokai-theme)
 
 (use-package projectile
   :pin melpa ;; for changes to ag-ignore
@@ -35,23 +33,19 @@
  ;; sidebar and status bar
  (use-package all-the-icons)
  (use-package neotree
-   :ensure t
    :init (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
    :config (setq neo-autorefresh nil)) ;; Stopping Neotree from constantly switching to the open file's directory
 
  (use-package smart-mode-line
-   :ensure t
    :config
    (setq sml/no-confirm-load-theme t)
    (sml/setup))
 
 ;; autoupdate
-(use-package auto-package-update
-  :ensure t)
+(use-package auto-package-update)
 
 ;; popum summary
 (use-package popup-imenu
-  :ensure t
   :commands popup-imenu
   :bind ("M-i" . popup-imenu))
 
@@ -62,7 +56,6 @@
          ("M-O" . isearch-moccur-all)))
 
 (use-package nyan-mode
-  :ensure t
   :init (progn (nyan-mode 1))
   )
 
@@ -249,9 +242,8 @@
   (add-hook 'hack-local-variables-hook 'whitespace-mode nil t))
 
 
-(use-package web-mode
-  :ensure t)
-  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(use-package web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
@@ -261,5 +253,4 @@
 (add-to-list 'auto-mode-alist '("\\.scala.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-(use-package resize-window
-  :ensure t)
+(use-package resize-window)

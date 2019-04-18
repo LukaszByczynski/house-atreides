@@ -14,19 +14,22 @@
   ;; done so (e.g. firewalled corporate environments)
   (require 'package)
   (setq
-  package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                     ("org" . "http://orgmode.org/elpa/")
-                     ("marmalade" . "http://marmalade-repo.org/packages/")
-                     ("melpa-stable" . "http://stable.melpa.org/packages/")
-                     ("marmalade" . "http://marmalade-repo.org/packages/")
-                     ("melpa" . "http://melpa.org/packages/"))
-  package-archive-priorities '(("melpa-stable" . 1))))
+  package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                     ("org" . "https://orgmode.org/elpa/")
+                     ("marmalade" . "https://marmalade-repo.org/packages/")
+                     ("melpa-stable" . "https://stable.melpa.org/packages/")
+                     ("marmalade" . "https://marmalade-repo.org/packages/")
+                     ("melpa" . "https://melpa.org/packages/"))
+                     ;; package-archive-priorities '(("melpa" . 1)))
+  ))
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
-(setq use-package-always-ensure t)
+;; Enable defer and ensure by default for use-package
+(setq ;;use-package-always-defer t
+      use-package-always-ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Global variables (prebuilt in emacs)
@@ -153,9 +156,6 @@
 (add-to-list 'auto-mode-alist '("\\.xml\\'" . nxml-mode))
 ;; WORKAROUND http://debbugs.gnu.org/cgi/bugreport.cgi?bug=16449
 (add-hook 'nxml-mode-hook (lambda () (flyspell-mode -1)))
-
-;; mouse scrolling fix
-;; (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load my custom scripts
