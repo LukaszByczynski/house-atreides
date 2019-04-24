@@ -9,6 +9,7 @@ TAGS
 .idea/
 .idea_modules/
 .bloop/
+.gradle/
 target/
 out/
 plugins-local.sbt
