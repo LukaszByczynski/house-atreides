@@ -4,7 +4,7 @@
 .history
 .projectile
 .dir-locals.el
-TAGS
+.vscode/
 .metals/
 .idea/
 .idea_modules/
@@ -13,3 +13,4 @@ TAGS
 target/
 out/
 plugins-local.sbt
+TAGS
