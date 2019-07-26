@@ -93,3 +93,5 @@ source_if_exists ~/.bashrc.local
 source_if_exists ~/.aliases
 source_if_exists ~/.aliases.local
 source_if_exists ~/.aliases.sec
+
+export PATH="$HOME/.cargo/bin:$PATH"
