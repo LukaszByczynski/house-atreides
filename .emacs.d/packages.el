@@ -7,7 +7,7 @@
     ("s-N" . helm-find-files)))
 
 ;; monokai-theme
-(use-package monokai-theme)
+(use-package monokai-pro-theme)
 
 (use-package projectile
   :pin melpa ;; for changes to ag-ignore

@@ -22,13 +22,15 @@
                      ("melpa" . "https://melpa.org/packages/"))
                      ;; package-archive-priorities '(("melpa" . 1)))
   ))
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
 ;; Enable defer and ensure by default for use-package
-(setq ;;use-package-always-defer t
+(setq 
+;use-package-always-defer t
       use-package-always-ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -39,7 +41,6 @@
   initial-scratch-message nil
   enable-local-variables t
   create-lockfiles nil
-  ansi-color-for-comint-mode t
   make-backup-files nil
   load-prefer-newer t
   custom-file (expand-file-name "custom.el" user-emacs-directory)
@@ -61,18 +62,11 @@
 ;; This section is for global settings for built-in packages that autoload
 (setq
  help-window-select t
- show-paren-delay 0.5
- dabbrev-case-fold-search nil
  tags-case-fold-search nil
- tags-revert-without-query t
  tags-add-tables nil
- compilation-scroll-output 'first-error
  source-directory (getenv "EMACS_SOURCE")
- org-confirm-babel-evaluate nil
- nxml-slash-auto-complete-flag t
  sentence-end-double-space nil
- browse-url-browser-function 'browse-url-generic
- ediff-window-setup-function 'ediff-setup-windows-plain)
+ browse-url-browser-function 'browse-url-generic)
 
 (setq-default
   c-basic-offset 4)
@@ -135,7 +129,7 @@
 
 ;; paste fixes
 (setq kill-ring-max 100)
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 (setq select-active-regions t)
 (setq save-interprogram-paste-before-kill 1)
 (setq yank-pop-change-selection t)
@@ -176,11 +170,4 @@
 (load-user-file "functions.el")
 (load-user-file "scala.el")
 (load-user-file "keymap.el")
-
-;; Use emacs terminfo, not system terminfo
-;;(setq system-uses-terminfo nil)
-
-;; Use utf-8 in ansi-term
-;;(defadvice ansi-term (after advise-ansi-term-coding-system)
-;;    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
-;;(ad-activate 'ansi-term)
+;;; init.el ends here
