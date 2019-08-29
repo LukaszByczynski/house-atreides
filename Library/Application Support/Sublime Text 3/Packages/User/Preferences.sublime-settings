@@ -1,6 +1,6 @@
 {
 	"auto_complete": false,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Theme - Hero/Hero Dark Eighties.tmTheme",
 	"font_face": "Iosevka",
 	"font_size": 16,
 	"ignored_packages":
@@ -18,5 +18,5 @@
 	"material_theme_tabs_separator": true,
 	"material_theme_titlebar": true,
 	"show_definitions": false,
-	"theme": "Default.sublime-theme"
+	"theme": "Hero Dark.sublime-theme"
 }

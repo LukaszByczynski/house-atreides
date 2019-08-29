@@ -5,12 +5,20 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"AdvancedNewFile",
+		"AutoFileName",
 		"BracketHighlighter",
 		"LSP",
 		"Package Control",
+		"RainbowBrackets",
+		"Scalafmt",
+		"SublimeCodeIntel",
+		"SublimeREPL",
+		"SublimeSBT",
 		"SyncedSideBar",
 		"Terminus",
+		"Theme - Hero",
 		"TOML"
 	]
 }
