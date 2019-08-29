@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+package controllers
+
+final class ${1:${TM_FILENAME/(.*)\.scala/$1/}} extends Controller {
+  $2
+}
+
+]]></content>
+	<tabTrigger>controller</tabTrigger>
+	<scope>source.scala</scope>
+</snippet>

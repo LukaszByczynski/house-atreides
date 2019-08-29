@@ -1,0 +1,22 @@
+{
+	"auto_complete": false,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"font_face": "Iosevka",
+	"font_size": 16,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"material_theme_accent_pink": true,
+	"material_theme_accent_titlebar": true,
+	"material_theme_arrow_folders": true,
+	"material_theme_contrast_mode": true,
+	"material_theme_small_statusbar": true,
+	"material_theme_small_tab": true,
+	"material_theme_tabs_separator": true,
+	"material_theme_titlebar": true,
+	"show_definitions": false,
+	"theme": "Default.sublime-theme"
+}
