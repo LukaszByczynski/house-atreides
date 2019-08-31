@@ -7,18 +7,30 @@
 	[
 		"A File Icon",
 		"AdvancedNewFile",
+		"Alignment",
 		"AutoFileName",
 		"BracketHighlighter",
+		"Emmet",
+		"Emoji",
+		"HTML-CSS-JS Prettify",
 		"LSP",
+		"Maybs Quit",
 		"Package Control",
+		"Play 2.0",
+		"Pretty JSON",
+		"Pretty YAML",
 		"RainbowBrackets",
-		"Scalafmt",
+		"Sass",
+		"Scala Snippets",
+		"SideBarEnhancements",
 		"SublimeCodeIntel",
+		"SublimeLinter",
 		"SublimeREPL",
 		"SublimeSBT",
 		"SyncedSideBar",
 		"Terminus",
 		"Theme - Hero",
-		"TOML"
+		"Vuejs Snippets",
+		"Vuetify"
 	]
 }
