@@ -1,0 +1,13 @@
+[
+  {
+    "command": "lsp_symbol_definition",
+    "keys": [
+      "f12"
+    ]
+  },
+  {
+  	"keys": ["super+t"],
+    "command": "show_overlay",
+    "args": {"overlay": "command_palette", "command": "lsp_workspace_symbols" }
+  }
+]

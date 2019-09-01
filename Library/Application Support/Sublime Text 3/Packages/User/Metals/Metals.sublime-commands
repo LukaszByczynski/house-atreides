@@ -1,0 +1,8 @@
+[
+  // ...
+  {
+    "caption": "Metals: Import Build",
+    "command": "lsp_execute",
+    "args": { "command_name": "build-import" }
+  }
+]
