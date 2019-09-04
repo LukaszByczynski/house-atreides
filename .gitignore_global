@@ -16,3 +16,5 @@ plugins-local.sbt
 node_modules/*
 !node_modules/keep-dir
 TAGS
+*.sublime-project
+*.sublime-workspace
