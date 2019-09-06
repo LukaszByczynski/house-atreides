@@ -6,7 +6,6 @@
 	"installed_packages":
 	[
 		"A File Icon",
-		"AdvancedNewFile",
 		"Alignment",
 		"AutoFileName",
 		"BracketHighlighter",
@@ -14,6 +13,7 @@
 		"Color Highlight",
 		"Emmet",
 		"Emoji",
+		"FindResultsBufferUtils",
 		"HTML-CSS-JS Prettify",
 		"LSP",
 		"Maybs Quit",
@@ -25,7 +25,6 @@
 		"Sass",
 		"Scala Snippets",
 		"SideBarEnhancements",
-		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeREPL",
 		"SublimeSBT",
