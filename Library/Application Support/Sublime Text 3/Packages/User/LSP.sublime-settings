@@ -1,5 +1,6 @@
 // Settings in here override those in "LSP/LSP.sublime-settings",
-
 {
-  "prefer_label_over_filter_text": true
+  "prefer_label_over_filter_text": true,
+  "only_show_lsp_completions": true,
+  "show_references_in_quick_panel": true
 }
