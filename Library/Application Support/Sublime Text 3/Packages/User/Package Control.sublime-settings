@@ -7,7 +7,6 @@
 	[
 		"A File Icon",
 		"Alignment",
-		"AutoFileName",
 		"BracketHighlighter",
 		"Carbon",
 		"Color Highlight",
@@ -16,6 +15,7 @@
 		"FindResultsBufferUtils",
 		"HTML-CSS-JS Prettify",
 		"LSP",
+		"MarkdownPreview",
 		"Maybs Quit",
 		"Package Control",
 		"Play 2.0",
