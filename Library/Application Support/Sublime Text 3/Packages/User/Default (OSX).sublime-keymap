@@ -11,5 +11,16 @@
   { "keys": ["tab"], "command": "commit_completion", "context": [{ "key": "auto_complete_visible" } ] },
   // move to begin and end line with fn + left or right
   { "keys": ["home"], "command": "move_to", "args": { "to": "hardbol" } },
-  { "keys": ["end"], "command": "move_to", "args": { "to": "hardeol" } }
+  { "keys": ["end"], "command": "move_to", "args": { "to": "hardeol" } },
+
+
+    // Toggle the default shell in panel
+    { "keys": ["alt+`"], "command": "toggle_terminus_panel" },
+
+    // Open a terminal view at current file directory
+    {
+        "keys": ["ctrl+super+t"], "command": "terminus_open", "args": {
+          "cwd": "${file_path:${folder}}"
+        }
+    },
 ]
