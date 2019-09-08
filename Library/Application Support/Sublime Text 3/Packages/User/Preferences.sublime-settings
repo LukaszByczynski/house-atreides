@@ -115,12 +115,23 @@
 		"node_modules/**",
 		"target/**"
 	],
+	"block_caret": true,
+	"caret_style": "blink",
+	"color_scheme": "Packages/Theme - Hero/Hero Dark Eighties.tmTheme",
+	"default_line_ending": "unix",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Iosevka",
+	"font_options":
+	[
+		"dlig"
+	],
+	"font_size": 16,
+	"gpu_window_buffer": true,
+	"highlight_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"color_scheme": "Packages/Theme - Hero/Hero Dark Eighties.tmTheme",
-	"theme": "Hero Dark.sublime-theme",
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"material_theme_accent_pink": true,
@@ -131,17 +142,9 @@
 	"material_theme_small_tab": true,
 	"material_theme_tabs_separator": true,
 	"material_theme_titlebar": true,
+	"scroll_speed": 0,
 	"show_definitions": true,
 	"tab_size": 2,
-	"translate_tabs_to_spaces": true,
-	"caret_style": "blink",
-	"block_caret": true,
-	"highlight_line": true,
-	"font_face": "Iosevka",
-	"font_size": 16,
-	"font_options": ["dlig"],
-	"default_line_ending": "unix",
-	"ensure_newline_at_eof_on_save": true,
-	"scroll_speed": 0,
-	"gpu_window_buffer": true
+	"theme": "Hero Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
 }
