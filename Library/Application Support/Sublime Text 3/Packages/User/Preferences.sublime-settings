@@ -146,5 +146,6 @@
 	"show_definitions": true,
 	"tab_size": 2,
 	"theme": "Hero Dark.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"save_on_focus_lost": true
 }
