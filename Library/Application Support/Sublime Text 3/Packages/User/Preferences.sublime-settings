@@ -142,10 +142,13 @@
 	"material_theme_small_tab": true,
 	"material_theme_tabs_separator": true,
 	"material_theme_titlebar": true,
+	"save_on_focus_lost": true,
 	"scroll_speed": 0,
 	"show_definitions": true,
 	"tab_size": 2,
 	"theme": "Hero Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"save_on_focus_lost": true
+	"home": "~",
+	"keep_panel_open_after_action": true,
+	"start_from_here_default_action": "project",
 }

@@ -23,4 +23,8 @@
           "cwd": "${project_path:${folder}}"
         }
     },
+    // Start from the parent folder of the current view's file
+    { "keys": ["super+o"], "command": "fuzzy_start_from_file" },
+    // Show bookmarked folders
+    { "keys": ["super+shift+o"], "command": "fuzzy_bookmarks_load" }
 ]
