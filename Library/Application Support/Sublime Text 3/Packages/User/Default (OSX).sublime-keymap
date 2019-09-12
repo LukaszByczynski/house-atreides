@@ -20,7 +20,7 @@
     // Open a terminal view at current file directory
     {
         "keys": ["ctrl+super+t"], "command": "terminus_open", "args": {
-          "cwd": "${file_path:${folder}}"
+          "cwd": "${project_path:${folder}}"
         }
     },
 ]
