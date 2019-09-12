@@ -128,10 +128,12 @@
 	"font_size": 16,
 	"gpu_window_buffer": true,
 	"highlight_line": true,
+	"home": "~",
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"keep_panel_open_after_action": true,
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"material_theme_accent_pink": true,
@@ -145,10 +147,8 @@
 	"save_on_focus_lost": true,
 	"scroll_speed": 0,
 	"show_definitions": true,
+	"start_from_here_default_action": "project",
 	"tab_size": 2,
 	"theme": "Hero Dark.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"home": "~",
-	"keep_panel_open_after_action": true,
-	"start_from_here_default_action": "project",
+	"translate_tabs_to_spaces": true
 }
