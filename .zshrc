@@ -102,5 +102,6 @@ alias vs="code ."
 alias sm="smerge ."
 alias bs="brew services start scalacenter/bloop/bloop"
 alias bh="brew services stop scalacenter/bloop/bloop"
+alias metslrm="rm -rf .bloop .metals"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
