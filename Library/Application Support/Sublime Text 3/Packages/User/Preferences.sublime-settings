@@ -26,5 +26,7 @@
 	"start_from_here_default_action": "project",
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"scroll_past_end": false,
+	"trim_trailing_white_space_on_save": true
 }
