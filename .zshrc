@@ -102,6 +102,7 @@ alias vs="code ."
 alias sm="smerge ."
 alias bs="brew services start scalacenter/bloop/bloop"
 alias bh="brew services stop scalacenter/bloop/bloop"
-alias metslrm="rm -rf .bloop .metals"
+alias m_rmall="rm -rf .bloop .metals"
+alias m_import="METALS_ENABLED=true sbt metalsEnable bloopInstall"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
