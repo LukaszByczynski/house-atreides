@@ -16,6 +16,7 @@
 		"*.zip",
 		".bloop/**",
 		".idea/**",
+		"node_modules/**",
 		"project/project/**",
 		"target/**"
 	],
@@ -31,6 +32,7 @@
 	"font_size": 16,
 	"gpu_window_buffer": true,
 	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"home": "~",
 	"ignored_packages":
 	[
@@ -48,6 +50,5 @@
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"highlight_modified_tabs": true,
+	"trim_trailing_white_space_on_save": true
 }
