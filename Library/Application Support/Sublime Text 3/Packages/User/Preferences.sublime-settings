@@ -15,7 +15,9 @@
 		"*.ttf",
 		"*.zip",
 		".bloop/**",
-		".idea/**"
+		".idea/**",
+		"project/project/**",
+		"target/**"
 	],
 	"block_caret": true,
 	"caret_style": "blink",
