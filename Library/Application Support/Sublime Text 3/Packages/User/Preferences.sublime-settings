@@ -1,4 +1,22 @@
 {
+	"binary_file_patterns":
+	[
+		"*.dds",
+		"*.eot",
+		"*.gif",
+		"*.ico",
+		"*.jar",
+		"*.jpeg",
+		"*.jpg",
+		"*.pdf",
+		"*.png",
+		"*.swf",
+		"*.tga",
+		"*.ttf",
+		"*.zip",
+		".bloop/**",
+		".idea/**"
+	],
 	"block_caret": true,
 	"caret_style": "blink",
 	"default_line_ending": "unix",
@@ -19,6 +37,7 @@
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"save_on_focus_lost": true,
+	"scroll_past_end": false,
 	"scroll_speed": 0,
 	"show_definitions": true,
 	"sidebar_toggle_auto_hide": true,
@@ -27,6 +46,5 @@
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"scroll_past_end": false,
 	"trim_trailing_white_space_on_save": true
 }
