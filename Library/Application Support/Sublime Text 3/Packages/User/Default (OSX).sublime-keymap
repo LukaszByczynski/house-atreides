@@ -2,8 +2,8 @@
   { "keys": ["super+b"], "command": "goto_definition"},
   { "keys": ["super+b"], "command": "lsp_symbol_definition"},
   { "keys": ["super+option+l"], "command": "lsp_format_document" },
-  { 
-    "keys": ["super+t"], 
+  {
+    "keys": ["super+t"],
     "command": "show_overlay",
     "args": {"overlay": "command_palette", "command": "lsp_workspace_symbols" }
   },
@@ -26,5 +26,7 @@
     // Start from the parent folder of the current view's file
     { "keys": ["super+o"], "command": "fuzzy_start_from_file" },
     // Show bookmarked folders
-    { "keys": ["super+shift+o"], "command": "fuzzy_bookmarks_load" }
+    { "keys": ["super+shift+o"], "command": "fuzzy_bookmarks_load" },
+
+    { "keys": ["super+k", "super+w"], "command": "close_all" },
 ]
