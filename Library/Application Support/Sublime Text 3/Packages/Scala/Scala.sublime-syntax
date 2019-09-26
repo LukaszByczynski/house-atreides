@@ -18,7 +18,7 @@ variables:
   operator_character: '[\p{Sm}\p{So}[{{disallowed_as_operator}}&&[\x{20}-\x{7E}]]]'
   upper: '[$\p{Lu}]'
   # This is "letter", but without _ so we can ensure it is not last
-  idcont: '[$\p{Lu}\p{Ll}\p{Lt}\p{Lo}\p{Nl}0-9]'
+  idcont: '[$\p{Lu}\p{Ll}\p{Lt}\p{Lo}\p{Nl}0-9'']'
 
   # note the handling of ' characters in identifiers is somewhat conservative
   # TLS doesn't document this feature very well (read: at all), but this is how it's used
@@ -36,10 +36,10 @@ variables:
       [:@\x{2190}\x{21D2}#]{{operator_character}}+
     )
 
-  # {{operator_character}}+ \ {:, =, =>, <-, @, ←, ⇒, #, <%, <:, :<}
+  # {{operator_character}}+ \ {:, =, =>, <-, @, ←, ⇒, #, <%, <:, :<, +, -}
   typeop: |-
     (?x:
-      [[^:=<@\x{2190}\x{21D2}#]&&{{operator_character}}]{{operator_character}}*|
+      [[^:=<@\x{2190}\x{21D2}#+\-]&&{{operator_character}}]{{operator_character}}*|
       =[[^>]&&{{operator_character}}]{{operator_character}}*|
       =>{{operator_character}}+|
       <(?!{{operator_character}}|[[:alpha:]])|
@@ -47,7 +47,7 @@ variables:
       <[:%\-]{{operator_character}}+|
       :[[^<]&&{{operator_character}}]+|
       :<{{operator_character}}+|
-      [@\x{2190}\x{21D2}#]{{operator_character}}+
+      [@\x{2190}\x{21D2}#+\-]{{operator_character}}+
     )
 
   idrest: '(?:(?:{{idcont}}|_(?=[^{{operator_character}}]))*(?:_{{operator_character}}+)?)'
@@ -138,8 +138,8 @@ contexts:
         - include: block-comments
         - match: |-
             (?x)
-                  (?! /\*)
-                  (?! \*/)
+            			(?! /\*)
+            			(?! \*/)
 
   char-literal:
     - match: '''({{escaped_char}}|.)'''
@@ -188,15 +188,25 @@ contexts:
 
   annotation-parameters:
     - meta_content_scope: meta.annotation.parameters.scala
+    - match: (?=\(\))
+      push:
+      - match: \(
+        scope: punctuation.section.arguments.annotation.begin.scala
+      - match: (?=\))
+        scope: punctuation.section.arguments.annotation.end.scala
+        pop: true
     - match: \(
       scope: punctuation.section.arguments.annotation.begin.scala
       push:
-        - match: ','
-          scope: punctuation.separator.arguments.annotation.scala
-        - match: \)
+        - match: (?=\))
           scope: punctuation.section.arguments.annotation.end.scala
           pop: true
+        - match: ','
+          scope: punctuation.separator.arguments.annotation.scala
         - include: main
+    - match: \)
+      scope: punctuation.section.arguments.annotation.end.scala
+      pop: true
     - match: \[
       scope: punctuation.section.arguments.annotation.begin.scala
       push:
@@ -217,10 +227,8 @@ contexts:
         - include: lambda-declaration
   lambda-declaration-base:
     - match: \(
-      scope: punctuation.section.group.begin.scala
       push:
         - match: \)
-          scope: punctuation.section.group.end.scala
           pop: true
         - include: lambda-declaration-parens
     - match: '{{id}}'
@@ -250,10 +258,10 @@ contexts:
     - include: lambda-declaration-base
 
   base-types:
-    - match: \b(?:Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double|Any|AnyRef|AnyVal|Nothing)\b
+    - match: \b(Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double|Any|AnyRef|AnyVal|Nothing)\b
       scope: storage.type.primitive.scala
   literal-constants:
-    - match: \b(?:false|null|true)\b
+    - match: \b(false|null|true)\b
       scope: constant.language.scala
     # TODO negation
     # source: http://www.scala-lang.org/files/archive/spec/2.11/01-lexical-syntax.html#floating-point-literals
@@ -282,10 +290,10 @@ contexts:
       scope: constant.language.scala
   base-constants:
     - include: literal-constants
-    - match: \b(?:this|super)\b
+    - match: \b(this|super)\b
       scope: variable.language.scala
     # base-types with try-dispatch followup
-    - match: \b(?:Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
+    - match: \b(Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
       scope: storage.type.primitive.scala
       push: try-dispatch
   constants:
@@ -299,18 +307,13 @@ contexts:
       push: try-dispatch
   try-dispatch:
     - match: '\('
-      scope: punctuation.section.group.begin.scala
       push:
         - match: \)
-          scope: punctuation.section.group.end.scala
           pop: true
         - include: main
     - match: '\['
-      scope: punctuation.definition.generic.begin.scala
       push:
-        - meta_scope: meta.generic.scala
         - match: \]
-          scope: punctuation.definition.generic.end.scala
           pop: true
         - include: delimited-type-expression
     - match: '(?=[\S\n;])'
@@ -322,7 +325,7 @@ contexts:
         1: storage.type.function.scala
         2: entity.name.function.scala
       push: function-type-parameter-list
-    - match: '\b(case\s+)?(class|trait|object)(\s+({{id}}))'
+    - match: '\b(case\s+)?(class|trait|object)(?:\s+({{id}}))'
       scope: meta.class.identifier.scala
       captures:
         1: storage.type.class.scala
@@ -337,11 +340,8 @@ contexts:
         - match: '(?=[\n;\}\)\]])'
           pop: true
         - match: '\['
-          scope: punctuation.definition.generic.begin.scala
           push:
-            - meta_scope: meta.generic.scala
             - match: '\]'
-              scope: punctuation.definition.generic.end.scala
               pop: true
             - include: type-constraints
             - include: delimited-type-expression
@@ -357,9 +357,10 @@ contexts:
     - match: '\b(var)\s+({{id}})'
       captures:
         1: storage.type.volatile.scala
-        2: variable.other.readwrite.scala
-    - match: '\bval\b'
-      scope: storage.type.stable.scala
+        2: entity.name.var.scala
+    - match: '\b(val)\b'
+      captures:
+        1: storage.type.stable.scala
       push: val-simple-body
     - match: '\b(package)\s+(object)\s+({{id}})'
       captures:
@@ -367,15 +368,13 @@ contexts:
         2: storage.type.class.scala
         3: entity.name.class.scala
       push: class-inheritance-extends
-    - match: '\b(package)\s+({{id}}(?:\.{{id}})*)\s*(\{)'
+    - match: '\b(package)\s+({{id}}(?:\.{{id}})*)\s*\{'
       captures:
         1: keyword.control.scala
         2: entity.name.namespace.scoped.scala
-        3: punctuation.section.block.begin.scala
       push:
         - meta_scope: meta.namespace.scala
         - match: '\}'
-          scope: punctuation.section.block.end.scala
           pop: true
         - include: main
     - match: '\b(package)\s+({{id}}(?:\.{{id}})*)'
@@ -384,14 +383,15 @@ contexts:
         1: keyword.control.scala
         2: entity.name.namespace.header.scala
     # what follows is identical to case-pattern, except it goes to case-body-first
-    - match: '\bcase\b(?!\s+class\b)'
+    - match: '\b(case)\b(?!\s+class\b)'
       scope: keyword.other.declaration.scala
       push:
         - meta_content_scope: meta.pattern.scala
         - match: '(?=\bclass\b)'
           pop: true
-        - match: '\bif\b'
-          scope: keyword.control.flow.scala
+        - match: '\b(if)\b'
+          captures:
+            1: keyword.control.flow.scala
           set:
             - match: '{{rightarrow}}'
               scope: storage.type.function.arrow.case.scala
@@ -433,12 +433,13 @@ contexts:
 
   # this exists to clear the meta_scope from first or non-first
   case-pattern:
-    - match: '\bcase\b'
+    - match: '\b(case)\b'
       scope: keyword.other.declaration.scala
       set:
         - meta_content_scope: meta.pattern.scala
-        - match: '\bif\b'
-          scope: keyword.control.flow.scala
+        - match: '\b(if)\b'
+          captures:
+            1: keyword.control.flow.scala
           set:
             - match: '{{rightarrow}}'
               scope: storage.type.function.arrow.case.scala
@@ -491,7 +492,7 @@ contexts:
   # this is included when a single newline is found in a declaration
   # you should never push/set this context, only include
   decl-newline-double-check:
-    - match: '(?=[\{\}\)]|\b(?:case|class|def|val|var|trait|object|private|protected|for|while|if|final|sealed|implicit|type|import|override)\b)'
+    - match: '(?=[\{\}\)]|\b(case|class|def|val|var|trait|object|private|protected|for|while|if|final|sealed|implicit|type|import|override)\b)'
       pop: true
     - match: '\n'
       pop: true
@@ -500,10 +501,8 @@ contexts:
     - match: '(?=\()'
       set: function-parameter-list
     - match: '\['
-      scope: punctuation.definition.generic.begin.scala
       push: function-tparams-brackets
     - match: ':'
-      scope: punctuation.ascription.scala
       set: function-return-type-definition
     - match: '(?=[\{\};]|{{nonopchar}}?={{nonopchar}})'
       pop: true
@@ -518,12 +517,9 @@ contexts:
       set: function-type-parameter-list
 
   function-tparams-brackets:
-    - meta_scope: meta.generic.scala
     - match: '\['
-      scope: punctuation.definition.generic.begin.scala
       push: function-tparams-brackets
     - match: '\]'
-      scope: punctuation.definition.generic.end.scala
       pop: true
     - include: type-constraints
     - include: delimited-type-expression
@@ -544,10 +540,8 @@ contexts:
 
   function-parameter-list:
     - match: '\('
-      scope: punctuation.section.group.begin.scala
       push:
         - match: '\)'
-          scope: punctuation.section.group.end.scala
           pop: true
         - match: '({{alphaid}})(?=\s*:)'
           captures:
@@ -570,7 +564,7 @@ contexts:
                   pop: true
         - include: main
     - match: ':'
-      scope: punctuation.ascription.scala
+      scope: punctuation.separator.scala
       set: function-return-type-definition
     - match: '\n'
       set: function-parameter-list-newline
@@ -583,7 +577,7 @@ contexts:
       set: function-parameter-list
 
   class-type-parameter-list:
-    - match: '\b(?:private|protected)\b'
+    - match: '\b(private|protected)\b'
       scope: storage.modifier.access.scala
     - match: (?=@{{plainid}})
       set:
@@ -593,9 +587,8 @@ contexts:
     - match: '(?=\()'
       set: class-parameter-list
     - match: '\['
-      scope: punctuation.definition.generic.begin.scala
       push: class-tparams-brackets
-    - match: '(?=\b(?:extends|with)\b)'
+    - match: '(?=\b(extends|with)\b)'
       set: class-inheritance-extends
     - match: '(?=\{)'
       set: class-pre-inheritance-early-initializer
@@ -610,28 +603,23 @@ contexts:
       set: class-type-parameter-list
 
   class-tparams-brackets:
-    - meta_scope: meta.generic.scala
     - match: '\['
-      scope: punctuation.definition.generic.begin.scala
       push: class-tparams-brackets
     - match: '\]'
-      scope: punctuation.definition.generic.end.scala
       pop: true
-    - match: '\b(?:this|super)\b'
+    - match: '\b(this|super)\b'
       scope: variable.language.scala
     - include: type-constraints
     - include: delimited-type-expression
 
   class-parameter-list:
     - match: '\('
-      scope: punctuation.section.group.begin.scala
       push:
         - match: '\)'
-          scope: punctuation.section.group.end.scala
           pop: true
-        - match: '\bval\b'
+        - match: '\b(val)\b'
           scope: storage.type.scala
-        - match: '\bvar\b'
+        - match: '\b(var)\b'
           scope: storage.type.volatile.scala
         - match: '({{alphaid}})(?=\s*:)'
           captures:
@@ -653,7 +641,7 @@ contexts:
                 - match: '(?=[=])'
                   pop: true
         - include: main
-    - match: '(?=\b(?:extends|with)\b)'
+    - match: '(?=\b(extends|with)\b)'
       set: class-inheritance-extends
     - match: '(?=\{)'
       set: class-pre-inheritance-early-initializer
@@ -676,7 +664,7 @@ contexts:
           scope: punctuation.section.braces.end.scala
           pop: true
         - include: main
-    - match: '(?=\b(?:extends|with)\b)'
+    - match: '(?=\b(extends|with)\b)'
       set: class-inheritance-extends
     - match: '(?=\S)'
       pop: true
@@ -720,10 +708,10 @@ contexts:
       scope: entity.other.inherited-class.scala
       set: class-inheritance-extends-token-after
     - match: \(
-      scope: punctuation.definition.parens.begin.scala
+      scope: punctuation.section.parens.begin.scala
       set:
         - match: \)
-          scope: punctuation.definition.parens.end.scala
+          scope: punctuation.section.parens.end.scala
           set: class-inheritance-with
         - include: delimited-type-expression
     - match: '\n'
@@ -737,7 +725,6 @@ contexts:
       set: class-inheritance-extends-token
 
   class-inheritance-extends-token-after:
-    # we don't use punctuation.definition here because it's not part of the type anymore
     - match: \(
       scope: punctuation.section.parens.begin.scala
       push:
@@ -746,13 +733,13 @@ contexts:
           pop: true
         - include: main
     - match: \[
-      scope: punctuation.definition.generic.begin.scala
+      scope: punctuation.section.brackets.begin.scala
       push:
         - match: \]
-          scope: punctuation.definition.generic.end.scala
+          scope: punctuation.section.brackets.end.scala
           pop: true
         - include: delimited-type-expression
-    - match: (?=\b(?:with|extends)\b)
+    - match: (?=\b(with|extends)\b)
       set: class-inheritance-with
     - match: (?=\{)
       set: class-inheritance-early-initializer
@@ -805,34 +792,33 @@ contexts:
       set: class-inheritance-with
 
   imports:
-    - match: \bimport\b
+    - match: \b(import)\b
       scope: keyword.other.import.scala
       push:
         - meta_scope: meta.import.scala
-        - match: '(,)[ \t]*\n'    # TODO real newline inference
-          captures:
-            1: punctuation.separator.scala
-        - match: ','
-          scope: punctuation.separator.scala
+        - match: ',\n'    # TODO operator scoping for , and . in imports
         - match: '(?=[\n;])'
           pop: true
+        - match: '(?:{{id}}\.)+{{id}}?'
+          scope: variable.package.scala
         - match: '{{id}}'
-        - match: \.
-          scope: punctuation.accessor.dot.scala
+          scope: variable.import.scala
         - match: '_'
           scope: variable.language.underscore.scala
         - match: "{"
-          scope: punctuation.section.group.begin.scala
           push:
             - meta_scope: meta.import.selector.scala
             - match: "}"
-              scope: punctuation.section.group.end.scala
               pop: true
-            - match: ','
-              scope: punctuation.separator.scala
+            - match: '({{id}})\s*({{rightarrow}})\s*({{id}})'
+              captures:
+                1: variable.import.renamed-from.scala
+                2: keyword.operator.arrow.scala
+                3: variable.import.renamed-to.scala
             - match: '{{rightarrow}}'
               scope: keyword.operator.arrow.scala
             - match: '{{id}}'
+              scope: variable.import.scala
             - match: '_'
               scope: variable.language.underscore.scala
 
@@ -840,14 +826,12 @@ contexts:
   # it would be incorrect to scope operators specially, since they are just identifiers
   # by pulling them out HERE though and refusing to scope them, we emulate lookbehind
   operators:
-    - match: ;
-      scope: punctuation.terminator.scala
     - match: '{{op}}(?=[\(\[])'   # no explicit scope, just pulling it out
       push: try-dispatch
     - match: '{{op}}'   # no explicit scope, just pulling it out
 
   initialization:
-    - match: '\bnew\b'
+    - match: '\b(new)\b'
       scope: keyword.other.scala
       push: initialization-body
 
@@ -878,7 +862,7 @@ contexts:
           scope: punctuation.definition.generic.end.scala
           set: initialization-term-tail
         - include: delimited-type-expression
-    - match: '\bwith\b'
+    - match: '\b(with)\b'
       scope: keyword.declaration.scala
       set: initialization-body-allow-newline
     - match: '{{upperid}}'
@@ -935,22 +919,18 @@ contexts:
       pop: true
 
   for-comprehension:
-    - match: '\b(for)\s*(\{)'
+    - match: '\b(for)\s*\{'
       captures:
         1: keyword.control.flow.scala
-        2: punctuation.section.block.begin.scala
       push:
         - match: '\}'
-          scope: punctuation.section.block.end.scala
           pop: true
         - include: for-braces-body
-    - match: '\b(for)\s*(\()'
+    - match: '\b(for)\s*\('
       captures:
         1: keyword.control.flow.scala
-        2: punctuation.section.group.begin.scala
       push:
         - match: '\)'
-          scope: punctuation.section.group.end.scala
           pop: true
         - include: for-parens-body
   for-braces-body:
@@ -967,7 +947,7 @@ contexts:
             (?:{{nonopchar}}|_)(<-|\x{2190}|=){{nonopchar}}
           )
       push:
-        - match: '\bval\b'
+        - match: '\b(val)\b'
           scope: storage.type.stable.scala
         - match: <-|\x{2190}|=
           scope: keyword.operator.assignment.scala
@@ -976,13 +956,13 @@ contexts:
         - include: main
     - include: main
   for-parens-body:
-    - match: '\bif\b'
+    - match: '\b(if)\b'
       scope: keyword.control.flow.scala
       push: for-parens-expr
     - match: '<-|\x{2190}|='
       scope: keyword.operator.assignment.scala
       push: for-parens-expr
-    - match: '\bval\b'
+    - match: '\b(val)\b'
       scope: storage.type.stable.scala
     - include: pattern-match
   for-parens-expr:
@@ -993,18 +973,18 @@ contexts:
     - include: main
 
   keywords:
-    - match: \b(?:return|throw)\b
+    - match: \b(return|throw)\b
       scope: keyword.control.flow.jump.scala
-    - match: \b(?:else|if|do|while|for|yield|match)\b
+    - match: \b(else|if|do|while|for|yield|match)\b
       scope: keyword.control.flow.scala
-    - match: \b(?:catch|finally|try)\b
+    - match: \b(catch|finally|try)\b
       scope: keyword.control.exception.scala
-    - match: \bmacro\b
+    - match: \b(macro)\b
       scope: keyword.other.scala
     - match: \?\?\?
       scope: keyword.other.scala
-    - match: '[!=]=(?={{nonopchar}})|\b(?:eq|ne)\b'
-      scope: keyword.operator.comparison.scala
+    - match: \b(eq|ne)\b
+      scope: keyword.operator.word.scala
 
   late-keywords:
     - match: \bextends\b
@@ -1021,7 +1001,7 @@ contexts:
       scope: storage.type.scala
     - match: \bvar\b
       scope: storage.type.volatile.scala
-    - match: \bpackage\b
+    - match: \b(package)\b
       scope: keyword.control.scala
 
   late-operators:
@@ -1052,9 +1032,9 @@ contexts:
       scope: constant.other.symbol.scala
 
   storage-modifiers:
-    - match: '\b(?:private\[\S+\]|protected\[\S+\]|private|protected)\b'
+    - match: '\b(private\[\S+\]|protected\[\S+\]|private|protected)\b'
       scope: storage.modifier.access.scala
-    - match: \b(?:abstract|final|lazy|sealed|implicit|override)\b
+    - match: \b(abstract|final|lazy|sealed|implicit|override)\b
       scope: storage.modifier.other.scala
 
   # see http://www.scala-lang.org/docu/files/ScalaReference.pdf part 1.3.5-6 (page 18)
@@ -1178,13 +1158,14 @@ contexts:
 
   interpolated-vars-expressions:
     # we duplicate this pattern to encode a greedy ? on the [']
-    - match: '\$(?={{alphaid}})'
-      scope: punctuation.definition.variable.scala variable.other.scala
-      push:
-        - clear_scopes: 1
-        - match: '{{alphaid}}'
-          scope: variable.other.scala
-          pop: true
+    - match: '(\$)({{alphaid}})['']'
+      captures:
+        1: punctuation.definition.variable.scala variable.other.scala
+        2: variable.other.scala
+    - match: '(\$){{alphaid}}'
+      scope: variable.other.scala
+      captures:
+        1: punctuation.definition.variable.scala
     - match: '\$\{'
       scope: punctuation.definition.expression.scala
       push:
@@ -1366,7 +1347,7 @@ contexts:
         - match: (?=\S)
           pop: true
     - match: '\b{{varid}}'
-      scope: variable.other.constant.scala
+      scope: entity.name.val.scala
     - match: \[
       push:
         - match: \]
@@ -1407,17 +1388,17 @@ contexts:
 
     # special form lookahead to prevent invalid operator ascription syntax
     - match: '(?:{{op}}|{{id}}_{{operator_character}}*):(?=\s+:|\s*=|\s*$)'
-      scope: variable.other.constant.scala
+      scope: entity.name.val.scala
       set: val-simple-body-tail
     - match: '({{op}}|{{id}}_{{operator_character}}*)(:)(?=\s)'
       captures:
-        1: variable.other.constant.scala
+        1: entity.name.val.scala
         2: invalid.ascription.following-operator.scala
       set: val-simple-ascription
 
     # an id followed by a type, or an =, or EOL
     - match: '{{id}}(?=\s*:{{nonopchar}}|\s*=|\s*$)'
-      scope: variable.other.constant.scala
+      scope: entity.name.val.scala
       set: val-simple-body-tail
     - match: (?=\S)
       set:
@@ -1538,28 +1519,19 @@ contexts:
         - include: nested-pattern-match
 
   base-type-expression-no-function:
-    - match: ;
-      scope: punctuation.terminator.scala
-      pop: true
     - match: \(
-      scope: punctuation.definition.group.begin.scala
       push:
         - match: \)
-          scope: punctuation.definition.group.end.scala
           pop: true
         - include: delimited-type-expression
     - match: \[
-      scope: punctuation.definition.generic.begin.scala
       push:
         - match: \]
-          scope: punctuation.definition.generic.end.scala
           pop: true
         - include: delimited-type-expression
     - match: \{
-      scope: punctuation.definition.block.begin.scala
       push:
         - match: \}
-          scope: punctuation.definition.block.end.scala
           pop: true
         - include: declarations
     - match: '_\s*\*'
@@ -1577,48 +1549,45 @@ contexts:
   delimited-type-expression:
     - include: annotation
     # kind-projector support
-    - match: '\?|\*'
-      scope: variable.language.hole.scala
+    - match: '\?'
+      scope: variable.language.qmark.scala
     # \x{03BB} = λ
     - match: '\bLambda\b|\x{03BB}'
       scope: keyword.operator.type-lambda.scala
-    - match: '\btype\b'
+    - match: '\b(type)\b'
       scope: keyword.other.scala
-    - match: '\bwith\b'
+    - match: '\b(with)\b'
       scope: keyword.declaration.scala
     - match: '[\.#]'
       scope: punctuation.accessor.scala
-    - match: ','
-      scope: punctuation.separator.scala
     # - include: literal-constants
     # - include: char-literal
     # - include: scala-symbol
     # - include: strings
     - include: base-types
-    - match: '\b(?:forSome)\b'
+    - match: '\b(forSome)\b'
       scope: keyword.declaration.scala
-    - match: '\b(?:this|super)\b'
+    - match: '\b(this|super)\b'
       scope: variable.language.scala
     - match: '(?={{keywords}})'
       pop: true
     - match: '{{upperid}}'
       scope: support.class.scala
     - match: _
-      scope: variable.language.underscore.scala
     - match: '{{typeid}}'
       scope: support.type.scala
     - include: base-type-expression
 
   # single-type is a type expression with semicolon inference
   single-type-expression-no-function:
-    - match: '\btype\b'
+    - match: '\b(type)\b'
       scope: keyword.other.scala
-    - match: \b(?:Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
+    - match: \b(Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
       scope: storage.type.primitive.scala
       set: single-type-expression-tail-no-function
-    - match: '\b(?:forSome)\b'
+    - match: '\b(forSome)\b'
       scope: keyword.declaration.scala
-    - match: '\b(?:this|super)\b'
+    - match: '\b(this|super)\b'
       scope: variable.language.scala
       set: single-type-expression-tail-no-function
     - match: '{{upperid}}'
@@ -1634,10 +1603,8 @@ contexts:
     - match: (?=@{{plainid}})
       set: single-type-expression-tail-no-function
     - match: \(
-      scope: punctuation.definition.generic.begin.scala
       set:
         - match: \)
-          scope: punctuation.definition.generic.end.scala
           set: single-type-expression-tail-no-function
         - include: delimited-type-expression
     - include: base-type-expression-no-function
@@ -1647,14 +1614,14 @@ contexts:
   single-type-expression:
     - match: '(?=\bif\b)'   # for pattern matching
       pop: true
-    - match: '\btype\b'
+    - match: '\b(type)\b'
       scope: keyword.other.scala
-    - match: \b(?:Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
+    - match: \b(Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
       scope: storage.type.primitive.scala
       set: single-type-expression-tail
-    - match: '\b(?:forSome)\b'
+    - match: '\b(forSome)\b'
       scope: keyword.declaration.scala
-    - match: '\b(?:this|super)\b'
+    - match: '\b(this|super)\b'
       scope: variable.language.scala
       set: single-type-expression-tail
     - match: '{{upperid}}'
@@ -1672,10 +1639,8 @@ contexts:
     - match: (?=@{{plainid}})
       set: single-type-expression-tail
     - match: \(
-      scope: punctuation.definition.group.begin.scala
       set:
         - match: \)
-          scope: punctuation.definition.group.end.scala
           set: single-type-expression-tail
         - include: delimited-type-expression
     - include: base-type-expression
@@ -1717,14 +1682,14 @@ contexts:
       captures:
         1: keyword.declaration.scala
       set: single-type-expression-no-function
-    - match: '\btype\b'
+    - match: '\b(type)\b'
       scope: invalid.keyword.type.in-tail-position.scala
-    - match: \b(?:Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
+    - match: \b(Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
       scope: storage.type.primitive.scala
       set: single-type-expression-tail-no-function-type-expectation
-    - match: '\b(?:forSome)\b'
+    - match: '\b(forSome)\b'
       scope: keyword.declaration.scala
-    - match: '\b(?:this|super)\b'
+    - match: '\b(this|super)\b'
       scope: variable.language.scala
       set: single-type-expression-tail-no-function-type-expectation
     - match: '{{upperid}}'
@@ -1740,10 +1705,8 @@ contexts:
       scope: support.type.scala
       set: single-type-expression-tail-no-function-type-expectation
     - match: '\{'
-      scope: punctuation.definition.block.begin.scala
       set:
         - match: \}
-          scope: punctuation.definition.block.end.scala
           set: single-type-expression-tail-no-function
         - include: main
     - match: '(?=\()'
@@ -1777,14 +1740,14 @@ contexts:
       captures:
         1: keyword.declaration.scala
       set: single-type-expression
-    - match: '\btype\b'
+    - match: '\b(type)\b'
       scope: invalid.keyword.type.in-tail-position.scala
-    - match: \b(?:Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
+    - match: \b(Unit|Boolean|Byte|Char|Short|Int|Float|Long|Double)\b
       scope: storage.type.primitive.scala
       set: single-type-expression-tail-type-expectation
-    - match: '\b(?:forSome)\b'
+    - match: '\b(forSome)\b'
       scope: keyword.declaration.scala
-    - match: '\b(?:this|super)\b'
+    - match: '\b(this|super)\b'
       scope: variable.language.scala
       set: single-type-expression-tail-type-expectation
     - match: '{{upperid}}'
@@ -1800,10 +1763,8 @@ contexts:
       scope: support.type.scala
       set: single-type-expression-tail-type-expectation
     - match: '\{'
-      scope: punctuation.definition.block.begin.scala
       set:
         - match: \}
-          scope: punctuation.definition.block.end.scala
           set: single-type-expression-tail
         - include: main
     - match: '(?=\()'
