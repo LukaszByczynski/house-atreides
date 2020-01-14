@@ -106,4 +106,5 @@ alias m_import="rm -rf .bloop .metals; METALS_ENABLED=true sbt metalsEnable bloo
 alias m_rmtarget="find . -type d -name target -exec rm -rf {} \;"
 alias m_rmnode="rm -rf .nuxt node_modules yarn.lock"
 
+alias m_rmm="rm -rf .bloop .metals"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
