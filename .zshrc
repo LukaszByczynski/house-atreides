@@ -108,3 +108,4 @@ alias m_rmnode="rm -rf .nuxt node_modules yarn.lock"
 
 alias m_rmm="rm -rf .bloop .metals"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export PATH="/usr/local/opt/scala@2.12/bin:$PATH"
