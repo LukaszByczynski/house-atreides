@@ -21,3 +21,4 @@ metals.sbt
 *.sublime-workspace
 *TestLocal.scala
 .tmp
+project/metals.sbt

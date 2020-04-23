@@ -1,4 +1,8 @@
 {
+	"added_words":
+	[
+		"middleware"
+	],
 	"diff_style": "side-by-side",
 	"expand_merge_commits_by_default": false,
 	"font_face": "Iosevka",
