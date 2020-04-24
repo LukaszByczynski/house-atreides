@@ -18,6 +18,8 @@
 		"HTML-CSS-JS Prettify",
 		"Keymaps",
 		"LSP",
+		"LSP-typescript",
+		"LSP-vue",
 		"MarkdownPreview",
 		"Maybs Quit",
 		"Package Control",
@@ -33,7 +35,6 @@
 		"SublimeSBT",
 		"Terminus",
 		"TypeScript Syntax",
-		"Vue Syntax Highlight",
-		"Vuetify"
+		"Vue Syntax Highlight"
 	]
 }

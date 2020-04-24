@@ -1,3 +1,0 @@
-[submodule ".vscode/extensions/vscode-playframework-syntax"]
-	path = .vscode/extensions/vscode-playframework-syntax
-	url = https://github.com/lanamaysu/vscode-playframework-syntax.git

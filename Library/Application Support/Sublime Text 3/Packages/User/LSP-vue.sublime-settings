@@ -1,0 +1,83 @@
+{
+  "clients":
+  {
+    "vue-ls":
+    {
+      "command":
+      [
+        "vls"
+      ],
+      "enabled": true,
+      "languageId": "vue",
+      "scopes":
+      [
+        "text.html.vue"
+      ],
+      "syntaxes":
+      [
+        "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax"
+      ],
+      "initializationOptions": {
+        "config": {
+          "vetur": {
+            "useWorkspaceDependencies": false,
+            "completion": {
+              "autoImport": false,
+              "useScaffoldSnippets": true,
+              "tagCasing": "kebab"
+            },
+            "grammar": {
+              "customBlocks": {
+                "docs": "md",
+                "i18n": "json"
+              }
+            },
+            "validation": {
+              "template": true,
+              "style": true,
+              "script": true
+            },
+            "format": {
+              "enable": true,
+              "options": {
+                "tabSize": 2,
+                "useTabs": false
+              },
+              "defaultFormatter": {
+                "css": "prettier",
+                "postcss": "prettier",
+                "scss": "prettier",
+                "less": "prettier",
+                "stylus": "prettier",
+                "js": "prettier",
+                "ts": "prettier"
+              },
+              "defaultFormatterOptions": {
+                "js-beautify-html": {
+                  "wrap_attributes": "force-expand-multiline"
+                },
+                "prettyhtml": {
+                  "printWidth": 100,
+                  "singleQuote": false,
+                  "wrapAttributes": false,
+                  "sortAttributes": false
+                }
+              },
+              "styleInitialIndent": false,
+              "scriptInitialIndent": false,
+            },
+            "trace": {
+              "server": "off"
+            },
+            "experimental": {
+              "templateInterpolationService": true
+            }
+          },
+          "html": {
+            "suggest": true
+          }
+        }
+      }
+    }
+  }
+}
