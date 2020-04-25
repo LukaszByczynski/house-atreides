@@ -6,7 +6,6 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
-		"Carbon",
 		"Color Highlight",
 		"Emmet",
 		"Emoji",
@@ -16,6 +15,7 @@
 		"Git badges like VS Code",
 		"HOCON Syntax Highlighting",
 		"HTML-CSS-JS Prettify",
+		"Jest",
 		"Keymaps",
 		"LSP",
 		"LSP-typescript",
