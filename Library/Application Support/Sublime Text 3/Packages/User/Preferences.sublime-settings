@@ -1,4 +1,6 @@
 {
+	"always_show_minimap_viewport": true,
+	"animation_enabled": false,
 	"binary_file_patterns":
 	[
 		"*.dds",
@@ -20,13 +22,13 @@
 		"project/project/**",
 		"target/**"
 	],
-	"spell_check": true,
 	"block_caret": true,
+	"bold_folder_labels": true,
 	"caret_style": "blink",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Iosevka",
-	"save_on_focus_lost" : true,
 	"font_size": 16,
 	"gpu_window_buffer": true,
 	"highlight_line": true,
@@ -34,12 +36,9 @@
 	"home": "~",
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
 	],
-	"animation_enabled": false,
-	"bold_folder_labels": true,
-	"default_line_ending": "unix",
-	"always_show_minimap_viewport" : true,
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
 	"save_on_focus_lost": true,
@@ -48,6 +47,7 @@
 	"show_definitions": true,
 	"sidebar_toggle_auto_hide": true,
 	"sidebar_toggle_on_hover": true,
+	"spell_check": true,
 	"start_from_here_default_action": "project",
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
