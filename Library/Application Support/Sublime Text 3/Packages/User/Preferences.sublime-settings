@@ -20,11 +20,13 @@
 		"project/project/**",
 		"target/**"
 	],
+	"spell_check": true,
 	"block_caret": true,
 	"caret_style": "blink",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Iosevka",
+	"save_on_focus_lost" : true,
 	"font_size": 16,
 	"gpu_window_buffer": true,
 	"highlight_line": true,
@@ -34,8 +36,12 @@
 	[
 		"Vintage"
 	],
-	"line_padding_bottom": 2,
-	"line_padding_top": 2,
+	"animation_enabled": false,
+	"bold_folder_labels": true,
+	"default_line_ending": "unix",
+	"always_show_minimap_viewport" : true,
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
 	"save_on_focus_lost": true,
 	"scroll_past_end": false,
 	"scroll_speed": 0,
