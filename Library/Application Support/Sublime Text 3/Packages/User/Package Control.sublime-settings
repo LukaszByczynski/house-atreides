@@ -21,6 +21,7 @@
 		"Jest",
 		"Keymaps",
 		"LSP",
+		"LSP-metals",
 		"LSP-typescript",
 		"LSP-vue",
 		"MarkdownEditing",
