@@ -43,6 +43,8 @@
 	[
 		"node_modules/"
 	],
+	"margin": 0,
+	"fade_fold_buttons": false,
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
 	"lsp_format_on_save": true,

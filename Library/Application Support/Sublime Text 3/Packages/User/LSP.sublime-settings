@@ -1,8 +1,7 @@
 {
+  "show_references_in_quick_panel": true,
+  "only_show_lsp_completions": false,
 	"clients":
 	{
-	},
-	"only_show_lsp_completions": true,
-	"prefer_label_over_filter_text": true,
-	"show_references_in_quick_panel": true
+	}
 }
