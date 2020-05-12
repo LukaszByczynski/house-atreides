@@ -24,6 +24,7 @@
 		"LiveReload",
 		"LSP",
 		"LSP-metals",
+		"LSP-typescript",
 		"LSP-vue",
 		"MarkdownLivePreview",
 		"MarkdownTOC",
@@ -38,6 +39,7 @@
 		"Silence Color Scheme",
 		"SublimeREPL",
 		"Terminus",
+		"TypeScript Syntax",
 		"Vue Syntax Highlight"
 	]
 }
