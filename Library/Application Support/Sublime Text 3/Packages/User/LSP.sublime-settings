@@ -1,14 +1,6 @@
 {
 	"clients":
 	{
-		"lsp-typescript":
-		{
-			"enabled": false
-		},
-		"lsp-vue":
-		{
-			"enabled": false
-		}
 	},
 	"only_show_lsp_completions": true,
 	"prefer_label_over_filter_text": true,

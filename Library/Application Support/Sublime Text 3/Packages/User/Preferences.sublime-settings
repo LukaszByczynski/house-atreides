@@ -25,6 +25,7 @@
 	"block_caret": true,
 	"bold_folder_labels": true,
 	"caret_style": "blink",
+	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": true,
@@ -36,22 +37,24 @@
 	"home": "~",
 	"ignored_packages":
 	[
-		"Markdown",
 		"Vintage"
+	],
+	"index_exclude_patterns":
+	[
+		"node_modules/"
 	],
 	"line_padding_bottom": 3,
 	"line_padding_top": 3,
+	"lsp_format_on_save": true,
 	"save_on_focus_lost": true,
 	"scroll_past_end": false,
 	"scroll_speed": 0,
 	"show_definitions": true,
 	"sidebar_toggle_auto_hide": true,
-	"sidebar_toggle_on_hover": true,
+	"sidebar_toggle_on_hover": false,
 	"spell_check": true,
-	"start_from_here_default_action": "project",
 	"tab_size": 2,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"lsp_format_on_save": true
+	"trim_trailing_white_space_on_save": true
 }
