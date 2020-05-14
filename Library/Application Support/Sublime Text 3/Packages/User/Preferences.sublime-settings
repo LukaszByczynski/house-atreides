@@ -1,4 +1,5 @@
 {
+	"adaptive_dividers": false,
 	"always_show_minimap_viewport": true,
 	"animation_enabled": false,
 	"binary_file_patterns":
@@ -23,7 +24,7 @@
 		"target/**"
 	],
 	"block_caret": true,
-	"bold_folder_labels": true,
+	"bold_folder_labels": false,
 	"caret_style": "blink",
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
@@ -40,7 +41,7 @@
 	"gravity_tab_height_short": true,
 	"gravity_title_bar": true,
 	"highlight_line": true,
-	"highlight_modified_tabs": true,
+	"highlight_modified_tabs": false,
 	"home": "~",
 	"ignored_packages":
 	[
@@ -69,7 +70,7 @@
 	"scroll_past_end": false,
 	"scroll_speed": 0,
 	"show_definitions": true,
-	"show_tab_close_buttons": false,
+	"show_tab_close_buttons": true,
 	"sidebar_toggle_auto_hide": true,
 	"sidebar_toggle_on_hover": false,
 	"spacegray_fileicons": true,
