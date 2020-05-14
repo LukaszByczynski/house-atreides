@@ -5,14 +5,14 @@
 	],
 	"installed_packages":
 	[
+		"Agila Theme",
 		"AttrFold",
 		"AutoFileName",
+		"ayu",
 		"BracketHighlighter",
 		"Code Runner",
-		"Color Highlight",
-		"ColorHelper",
-		"Colorsublime",
 		"Display numbers",
+		"Emmet",
 		"Emoji",
 		"FileIcons",
 		"FileManager",
@@ -29,6 +29,7 @@
 		"LSP-vue",
 		"MarkdownLivePreview",
 		"MarkdownTOC",
+		"Material Theme",
 		"Maybs Quit",
 		"Monokai++",
 		"Origami",
@@ -40,6 +41,9 @@
 		"Silence Color Scheme",
 		"SublimeREPL",
 		"Terminus",
+		"Theme - Gravity",
+		"Theme - Spacegray",
+		"Themr",
 		"TypeScript Syntax",
 		"Vue Syntax Highlight"
 	]
