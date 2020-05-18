@@ -4,7 +4,7 @@
 {
   "languages": {
     "scala": {
-      "extensions": ["sbt", "sc", "scala"],
+      "extensions": ["sbt", "sc", "scala", "vue", "js", "ts"],
       "mode": "all"
     }
   }
