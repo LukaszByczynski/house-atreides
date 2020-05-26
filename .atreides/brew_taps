@@ -1,0 +1,9 @@
+caskroom/fonts
+graalvm/tap
+homebrew/cask
+homebrew/cask-versions
+homebrew/core
+homebrew/services
+olafurpg/scalafmt
+scalacenter/bloop
+coursier/formulas
