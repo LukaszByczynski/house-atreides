@@ -1,5 +1,5 @@
 #!/bin/sh
-METALS_VERSION=0.9.1
+METALS_VERSION=0.9.2
 rm /usr/local/bin/metals-emacs
 rm /usr/local/bin/metals-sublime
 coursier bootstrap \
