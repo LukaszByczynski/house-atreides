@@ -26,7 +26,7 @@
 	"block_caret": true,
 	"bold_folder_labels": false,
 	"caret_style": "blink",
-	"close_windows_when_empty": true,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"ensure_newline_at_eof_on_save": true,
