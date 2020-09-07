@@ -19,8 +19,6 @@
                      ("marmalade" . "https://marmalade-repo.org/packages/")
                      ("melpa-stable" . "https://stable.melpa.org/packages/")
                      ("marmalade" . "https://marmalade-repo.org/packages/")
-                     ("melpa" . "https://melpa.org/packages/"))
-                     ;; package-archive-priorities '(("melpa" . 1)))
   ))
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (package-initialize)
