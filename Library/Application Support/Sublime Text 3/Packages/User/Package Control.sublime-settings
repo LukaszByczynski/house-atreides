@@ -5,17 +5,19 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"AttrFold",
 		"AutoFileName",
 		"BracketHighlighter",
 		"Code Runner",
+		"Colorsublime",
 		"Display numbers",
 		"Emmet",
 		"Emoji",
-		"FileIcons",
 		"FileManager",
 		"Focus File on Sidebar",
 		"Git badges like VS Code",
+		"Guna",
 		"HOCON Syntax Highlighting",
 		"HTML5",
 		"Jest",
@@ -29,7 +31,6 @@
 		"MarkdownLivePreview",
 		"MarkdownTOC",
 		"Maybs Quit",
-		"Monokai++",
 		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
@@ -40,9 +41,9 @@
 		"SublimeREPL",
 		"TabsExtra",
 		"Terminus",
+		"Theme - Gravity",
 		"Themr",
 		"TypeScript Syntax",
-		"Ultimate Dark Neo",
 		"Vue Syntax Highlight"
 	]
 }
