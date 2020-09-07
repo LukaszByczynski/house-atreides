@@ -5,10 +5,8 @@
 	],
 	"installed_packages":
 	[
-		"Agila Theme",
 		"AttrFold",
 		"AutoFileName",
-		"ayu",
 		"BracketHighlighter",
 		"Code Runner",
 		"Display numbers",
@@ -19,6 +17,7 @@
 		"Focus File on Sidebar",
 		"Git badges like VS Code",
 		"HOCON Syntax Highlighting",
+		"HTML5",
 		"Jest",
 		"Keymaps",
 		"Less Tabs",
@@ -29,7 +28,6 @@
 		"LSP-vue",
 		"MarkdownLivePreview",
 		"MarkdownTOC",
-		"Material Theme",
 		"Maybs Quit",
 		"Monokai++",
 		"Origami",
@@ -37,15 +35,14 @@
 		"PackageResourceViewer",
 		"ProjectManager",
 		"RainbowBrackets",
+		"Semantic Highlighter",
 		"SidebarHoverToggle",
-		"Silence Color Scheme",
 		"SublimeREPL",
 		"TabsExtra",
 		"Terminus",
-		"Theme - Gravity",
-		"Theme - Spacegray",
 		"Themr",
 		"TypeScript Syntax",
+		"Ultimate Dark Neo",
 		"Vue Syntax Highlight"
 	]
 }
