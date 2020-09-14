@@ -26,7 +26,7 @@
 	"bold_folder_labels": true,
 	"caret_style": "blink",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Monokai.tmTheme",
+	"color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/Monokai-Soft-MD.tmTheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": true,
 	"ensure_newline_at_eof_on_save": true,
