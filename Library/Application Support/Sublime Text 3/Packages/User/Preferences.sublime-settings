@@ -1,4 +1,11 @@
 {
+	"added_words":
+	[
+		"hypervisor",
+		"Virtualbox",
+		"Ubuntu",
+		"Artifactory"
+	],
 	"always_show_minimap_viewport": true,
 	"animation_enabled": false,
 	"binary_file_patterns":
@@ -32,7 +39,7 @@
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"font_face": "Iosevka",
-	"font_size": 16,
+	"font_size": 13,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,

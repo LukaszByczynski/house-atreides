@@ -92,11 +92,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/opt/protobuf@2.5/bin:~/.local/bin:$PATH"
 
+# HHSTR
 alias hh=hstr                    # hh to be alias for hstr
 export HISTFILE=~/.zsh_history   # ensure history file visibility
 export HSTR_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
+# ALIASES
 alias ff=fzf
 alias vs="code ."
 alias sm="smerge ."
@@ -107,8 +109,22 @@ alias m_rmmetals="rm -rf .bloop .metals"
 alias m_rmtarget="find . -type d -name target -exec rm -rf {} \;"
 alias m_rmnode="rm -rf .nuxt node_modules yarn.lock"
 
+# AUTOJUMP
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /usr/share/autojump/autojump.zsh ] && . /usr/share/autojump/autojump.sh
 
-# jenv
+# BREW
+[ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# JENV
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+[ -x "$(command -v jenv)" ] && eval "$(jenv init -)"
+
+# SBT
+SBT_OPTS=$(<$HOME/.sbtopts)
+SBT_OPTS="${SBT_OPTS//$'\n'/ }"
+export SBT_OPTS="$SBT_OPTS"
+
+# Python
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
+
