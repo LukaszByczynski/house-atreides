@@ -10,6 +10,7 @@
 .idea_modules/
 .bloop/
 .gradle/
+.bsp/
 target/
 out/
 plugins-local.sbt
