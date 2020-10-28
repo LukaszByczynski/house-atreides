@@ -1,0 +1,328 @@
+[apps/update-manager]
+first-run=false
+launch-count=4
+launch-time=int64 1603814925
+show-details=true
+window-height=400
+window-width=780
+
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/org/gnome/desktop/wm/keybindings/close'
+saved-view='/org/gnome/desktop/wm/keybindings/close'
+window-height=1140
+window-is-maximized=false
+window-width=1523
+
+[com/ubuntu/update-notifier]
+release-check-time=uint32 1603452639
+
+[desktop/ibus/general]
+preload-engines=['xkb:pl::pol']
+version='1.5.22'
+
+[org/gnome/calculator]
+accuracy=9
+angle-units='degrees'
+base=10
+button-mode='basic'
+number-format='automatic'
+show-thousands=false
+show-zeroes=false
+source-currency=''
+source-units='degree'
+target-currency=''
+target-units='radian'
+window-position=(38, 72)
+word-size=64
+
+[org/gnome/control-center]
+last-panel='keyboard'
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST']
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'gucharmap.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'simple-scan.desktop', 'vinagre.desktop', 'yelp.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+draw-background=true
+picture-options='spanned'
+picture-uri='file:///home/au33ac/Firefox_wallpaper.png'
+primary-color='#02023c3c8888'
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'pl')]
+xkb-options=@as []
+
+[org/gnome/desktop/interface]
+enable-animations=false
+font-name='Iosevka 11'
+gtk-im-module='gtk-im-context-simple'
+gtk-theme='Yaru'
+monospace-font-name='Iosevka Term 13'
+text-scaling-factor=1.25
+
+[org/gnome/desktop/notifications]
+application-children=['update-manager', 'org-gnome-nautilus', 'firefox', 'slack', 'org-gnome-software', 'teams', 'org-gnome-pomodoro', 'apport-gtk', 'jetbrains-toolbox', 'sublime-text']
+
+[org/gnome/desktop/notifications/application/apport-gtk]
+application-id='apport-gtk.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/jetbrains-toolbox]
+application-id='jetbrains-toolbox.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-pomodoro]
+application-id='org.gnome.Pomodoro.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-software]
+application-id='org.gnome.Software.desktop'
+
+[org/gnome/desktop/notifications/application/slack]
+application-id='slack.desktop'
+
+[org/gnome/desktop/notifications/application/sublime-text]
+application-id='sublime_text.desktop'
+
+[org/gnome/desktop/notifications/application/teams]
+application-id='teams.desktop'
+
+[org/gnome/desktop/notifications/application/update-manager]
+application-id='update-manager.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+delay=uint32 268
+numlock-state=true
+repeat-interval=uint32 19
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+disable-microphone=false
+report-technical-problems=true
+
+[org/gnome/desktop/session]
+idle-delay=uint32 0
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=false
+
+[org/gnome/desktop/wm/keybindings]
+close=['<Alt>F4']
+cycle-group=@as []
+cycle-group-backward=@as []
+maximize=['<Primary><Alt>Return']
+minimize=['<Super>h', '<Alt>F9']
+move-to-workspace-down=['<Super><Shift>Page_Down']
+move-to-workspace-up=['<Super><Shift>Page_Up']
+show-desktop=['F11']
+switch-applications=['<Alt>Tab']
+switch-applications-backward=['<Shift><Alt>Tab']
+switch-group=['<Shift><Super>greater']
+switch-group-backward=['<Super>greater']
+switch-to-workspace-down=['<Super>Down']
+switch-to-workspace-left=@as []
+switch-to-workspace-right=@as []
+switch-to-workspace-up=['<Super>Page_Up', '<Super>Up']
+switch-windows=['<Primary>Tools']
+switch-windows-backward=['<Primary><Shift>Tools']
+toggle-maximized=['<Alt><Super>Return']
+
+[org/gnome/desktop/wm/preferences]
+button-layout='close,minimize,maximize:'
+num-workspaces=2
+titlebar-font='Iosevka Bold 11'
+
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
+
+[org/gnome/font-manager]
+browse-mode='Grid'
+compare-background-color='rgb(255,255,255)'
+compare-foreground-color='rgb(0,0,0)'
+compare-list=@as []
+window-position=(0, 30)
+window-size=(900, 600)
+
+[org/gnome/gedit/plugins]
+active-plugins=['spell', 'time', 'filebrowser', 'docinfo', 'modelines']
+
+[org/gnome/gedit/plugins/filebrowser]
+root='file:///'
+tree-view=true
+virtual-root='file:///home/au33ac/.config/Typora/conf'
+
+[org/gnome/gedit/preferences/ui]
+show-tabs-mode='auto'
+
+[org/gnome/gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(900, 700)
+state=87168
+
+[org/gnome/mutter]
+dynamic-workspaces=true
+overlay-key=''
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=['<Alt><Super>Left']
+toggle-tiled-right=['<Alt><Super>Right']
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(890, 550)
+maximized=false
+
+[org/gnome/pomodoro/preferences]
+enabled-plugins=['sounds', 'dark-theme']
+
+[org/gnome/pomodoro/state]
+timer-date='2020-10-26T15:09:20+0000'
+timer-elapsed=0.0
+timer-paused=false
+timer-score=4.0
+timer-state='null'
+timer-state-date='2020-10-26T15:09:20+0000'
+timer-state-duration=0.0
+
+[org/gnome/settings-daemon/plugins/media-keys]
+area-screenshot-clip=['<Primary><Shift>dollar']
+terminal=['<Primary><Super>t']
+window-screenshot-clip=['<Primary><Shift>percent']
+www=['<Primary><Super>y']
+
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-timeout=3600
+sleep-inactive-ac-type='nothing'
+
+[org/gnome/settings-daemon/plugins/xsettings]
+antialiasing='rgba'
+hinting='slight'
+
+[org/gnome/shell]
+app-picker-view=uint32 1
+enabled-extensions=['removeaccesibility@lomegor', 'ProxySwitcher@flannaghan.com', 'caffeine@patapon.info', 'openweather-extension@jenslody.de', 'wsmatrix@martin.zurowietz.de']
+favorite-apps=['slack.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/shell/extensions/caffeine]
+user-enabled=true
+
+[org/gnome/shell/extensions/dash-to-dock]
+animation-time=0.0
+apply-glossy-effect=false
+autohide-in-fullscreen=true
+background-opacity=1.0
+dock-fixed=false
+extend-height=false
+max-alpha=0.0
+preferred-monitor=0
+require-pressure-to-show=false
+show-apps-at-top=true
+
+[org/gnome/shell/extensions/openweather]
+actual-city=0
+city='52.2319581,21.0067249>Warszawa, województwo mazowieckie, Polska >-1'
+days-forecast=3
+decimal-places=1
+geolocation-provider='openstreetmaps'
+position-in-panel='center'
+pressure-unit='hPa'
+show-comment-in-forecast=true
+show-text-in-panel=true
+translate-condition=true
+unit='celsius'
+use-default-owm-key=true
+use-symbolic-icons=true
+weather-provider='openweathermap'
+wind-direction=true
+wind-speed-unit='kph'
+
+[org/gnome/shell/extensions/wsmatrix]
+num-columns=2
+num-rows=1
+
+[org/gnome/shell/keybindings]
+toggle-application-view=['LaunchB']
+
+[org/gnome/software]
+check-timestamp=int64 1603872175
+
+[org/gnome/system/location]
+enabled=false
+
+[org/gnome/terminal/legacy/keybindings]
+switch-to-tab-1='<Primary>1'
+switch-to-tab-10='<Primary>0'
+switch-to-tab-2='<Primary>2'
+switch-to-tab-3='<Primary>3'
+switch-to-tab-4='<Primary>4'
+switch-to-tab-5='<Primary>5'
+switch-to-tab-6='<Primary>6'
+switch-to-tab-7='<Primary>7'
+switch-to-tab-8='<Primary>8'
+switch-to-tab-9='<Primary>9'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+preserve-working-directory='never'
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=189
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+window-position=(566, 170)
+window-size=(1449, 1087)
+
+[system/proxy]
+mode='manual'
+
+[system/proxy/ftp]
+host='localhost'
+port=3128
+
+[system/proxy/http]
+host='localhost'
+port=3128
+
+[system/proxy/https]
+host='localhost'
+port=3128
