@@ -128,3 +128,6 @@ export SBT_OPTS="$SBT_OPTS"
 # Python
 [ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
 
+# Coursier
+export PATH="$PATH:/home/au33ac/.local/share/coursier/bin"
+
