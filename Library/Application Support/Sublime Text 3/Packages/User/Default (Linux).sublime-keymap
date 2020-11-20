@@ -1,0 +1,62 @@
+[
+  /**** LSP ****/
+  {
+    "keys": ["f1"],
+    "command": "show_overlay",
+    "args": {
+        "overlay": "command_palette",
+        "text": "LSP: ",
+    }
+  },
+  { "keys": ["ctrl+b"], "command": "lsp_symbol_definition", "context": [{"key": "setting.lsp_active"}]},
+  { "keys": ["alt+b"], "command": "lsp_symbol_type_definition", "context": [{"key": "setting.lsp_active"}]},
+  { "keys": ["ctrl+alt+l"], "command": "lsp_format_document", "context": [{"key": "setting.lsp_active"}]},
+  {
+    "keys": ["ctrl+t"],
+    "command": "show_overlay",
+    "args": {"overlay": "command_palette", "command": "lsp_workspace_symbols" },
+    "context": [{"key": "setting.lsp_active"}]
+  },
+
+  { "keys": ["enter"], "command": "commit_completion", "context": [{ "key": "auto_complete_visible" } ] },
+  { "keys": ["tab"], "command": "commit_completion", "context": [{ "key": "auto_complete_visible" } ] },
+  { "keys": ["alt+enter"], "command": "lsp_code_actions", "context": [{"key": "setting.lsp_active"}]},
+  { "keys": ["shift+f6"], "command": "lsp_symbol_rename", "context": [{"key": "setting.lsp_active"}]},
+
+  {"keys": ["alt+q"], "command": "lsp_hover", "context": [{"key": "setting.lsp_active"}]},
+  {"keys": ["alt+i"], "command": "lsp_hover", "context": [{"key": "setting.lsp_active"}]},
+  { "keys": ["f2"], "command": "lsp_show_diagnostics_panel", "context": [{"key": "setting.lsp_active"}]},
+
+  // move to begin and end line with fn + left or right
+  { "keys": ["home"], "command": "move_to", "args": { "to": "hardbol" } },
+  { "keys": ["end"], "command": "move_to", "args": { "to": "hardeol" } },
+
+  // Toggle the default shell in panel
+  { "keys": ["super+`"], "command": "toggle_terminus_panel" },
+  { "keys": ["alt+`"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+
+  // Open a terminal view at current file directory
+  { "keys": ["super+ctrl+t"], "command": "terminus_open", "args": { "cwd": "${folder}" } },
+
+  // Start from the parent folder of the current view's file
+  { "keys": ["ctrl+o"], "command": "fuzzy_start_from_file" },
+
+  // Show bookmarked folders
+  { "keys": ["ctrl+shift+o"], "command": "fuzzy_bookmarks_load" },
+
+  { "keys": ["ctrl+k", "ctrl+w"], "command": "close_all" },
+  { "keys": ["ctrl+k", "ctrl+l"], "command": "reveal_in_side_bar" },
+
+  { "keys": ["ctrl+e"], "command": "project_manager", "args": { "action": "new"}},
+  { "keys": ["ctrl+shift+e"], "command": "project_manager"},
+
+  { "keys": ["ctrl+f3"], "command": "less_tabs"},
+  { "keys": ["ctrl+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+
+  { "keys": ["ctrl+,"], "command": "edit_settings", "args":
+    {
+        "base_file": "${packages}/Default/Preferences.sublime-settings",
+        "default": "// Settings in here override those in \"Default/Preferences.sublime-settings\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
+    }
+  }
+]
