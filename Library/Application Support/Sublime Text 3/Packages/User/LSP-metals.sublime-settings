@@ -1,10 +1,7 @@
 {
-  "server_version": "0.9.4",
   "server_properties": [
     "-Dhttps.proxyHost=http://localhost:3128",
     "-Dhttps.proxyPort=http://localhost:3128",
-    "-Djavax.net.ssl.trustStore=/home/au33ac/.certs/ing.jks",
-    "-Djavax.net.ssl.trustStorePassword=xertFDTRChjgffd",
     "-Dmetals.client=sublime",
     "-Dmetals.status-bar=on",
     "-Dmetals.execute-client-command=on",
