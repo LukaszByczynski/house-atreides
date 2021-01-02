@@ -43,7 +43,7 @@
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"font_face": "Iosevka",
-	"font_size": 11,
+	"font_size": 16,
 	"gpu_window_buffer": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
