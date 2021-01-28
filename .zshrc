@@ -131,3 +131,6 @@ export SBT_OPTS="$SBT_OPTS"
 # Coursier
 export PATH="$PATH:/home/au33ac/.local/share/coursier/bin"
 
+# k8s
+alias k=kubectl
+alias kp=kubectl get pods
