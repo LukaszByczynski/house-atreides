@@ -46,7 +46,7 @@ ENABLE_CORRECTION="true"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -64,7 +64,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn aws npm sbt)
+plugins=(git yarn sbt)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,7 +91,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/opt/protobuf@2.5/bin:~/.local/bin:$PATH"
 
 # HHSTR
 alias hh=hstr                    # hh to be alias for hstr
@@ -127,11 +126,11 @@ SBT_OPTS="${SBT_OPTS//$'\n'/ }"
 export SBT_OPTS="$SBT_OPTS"
 
 # Python
-[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
-
-# Coursier
-export PATH="$PATH:/home/au33ac/.local/share/coursier/bin"
+#[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
 
 # k8s
 alias k=kubectl
 alias kp=kubectl get pods
+
+#mc
+alias mc="mc -u"
