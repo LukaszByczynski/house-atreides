@@ -132,5 +132,8 @@ export SBT_OPTS="$SBT_OPTS"
 alias k=kubectl
 alias kp=kubectl get pods
 
-#mc
-alias mc="mc -u"
+# cuda
+if [ -d "/usr/local/cuda/bin/" ]; then
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+fi
