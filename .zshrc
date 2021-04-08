@@ -129,7 +129,9 @@ export SBT_OPTS="$SBT_OPTS"
 
 # k8s
 alias k=kubectl
-alias kp=kubectl get pods
+alias kp="kubectl get pods"
+alias kl="kubectl logs -f "
+alias ka="kubectl apply -f "
 
 # cuda
 if [ -d "/usr/local/cuda/bin/" ]; then
