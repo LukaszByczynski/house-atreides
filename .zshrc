@@ -149,4 +149,8 @@ if [ -d "$HOME/go" ]; then
     export PATH=$PATH:$GOBIN
 fi
 
+# yarn
+export PATH="$(yarn global bin):$PATH"
+
+
 prompt_context() {}
