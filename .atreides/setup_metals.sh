@@ -1,8 +1,8 @@
 #!/bin/sh
-METALS_VERSION=0.10.0
+METALS_VERSION=0.10.2
 rm /usr/local/bin/metals-emacs
 rm /usr/local/bin/metals-sublime
-./cs bootstrap \
+cs bootstrap \
   --java-opt -Xss4m \
   --java-opt -Xms100m \
   --java-opt -Dmetals.client=sublime \
@@ -10,7 +10,7 @@ rm /usr/local/bin/metals-sublime
   -r bintray:scalacenter/releases \
   -r sonatype:snapshots \
   -o /usr/local/bin/metals-sublime -f
-./cs bootstrap \
+cs bootstrap \
   --java-opt -Xss4m \
   --java-opt -Xms100m \
   --java-opt -Dmetals.client=emacs \

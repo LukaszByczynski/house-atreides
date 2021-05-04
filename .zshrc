@@ -115,9 +115,8 @@ alias m_rmnode="rm -rf .nuxt node_modules yarn.lock"
 # BREW
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-# JENV
-export PATH="$HOME/.jenv/bin:$PATH"
-[ -x "$(command -v jenv)" ] && eval "$(jenv init -)"
+# coursier
+eval "$(cs setup --env --jvm 11 --apps sbt-launcher,ammonite)"
 
 # SBT
 SBT_OPTS=$(<$HOME/.sbtopts)
