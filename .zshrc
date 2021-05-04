@@ -116,7 +116,8 @@ alias m_rmnode="rm -rf .nuxt node_modules yarn.lock"
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # coursier
-eval "$(cs setup --env --jvm 11 --apps sbt-launcher,ammonite)"
+eval "$(cs java --env --jvm 11)"
+eval "$(cs install --env)"
 
 # SBT
 SBT_OPTS=$(<$HOME/.sbtopts)
