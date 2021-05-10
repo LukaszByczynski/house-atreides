@@ -152,5 +152,9 @@ fi
 # yarn
 export PATH="$(yarn global bin):$PATH"
 
+# rust
+if [ -d "$HOME/.cargo/env" ]; then
+    source $HOME/.cargo/env
+fi
 
 prompt_context() {}
