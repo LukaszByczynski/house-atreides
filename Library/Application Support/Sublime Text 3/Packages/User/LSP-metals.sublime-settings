@@ -1,12 +1,9 @@
 {
   "server_properties": [
-    "-Dhttps.proxyHost=http://localhost:3128",
-    "-Dhttps.proxyPort=http://localhost:3128",
     "-Dmetals.client=sublime",
     "-Dmetals.status-bar=on",
     "-Dmetals.execute-client-command=on",
     "-Xss4m",
     "-Xms100m",
-  ],
-   "java_home": "/home/au33ac/.jenv/versions/1.8"
+  ]
 }
