@@ -1,6 +1,6 @@
 {
   "show_references_in_quick_panel": true,
-  "only_show_lsp_completions": false,
+  "only_show_lsp_completions": true,
 	"clients":
 	{
 	}
