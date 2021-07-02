@@ -98,6 +98,7 @@ export HSTR_CONFIG=hicolor        # get more colors
 bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
 # ALIASES
+alias fd="fdfind -I"
 alias ff=fzf
 alias vs="code ."
 alias sm="smerge ."
