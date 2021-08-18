@@ -50,6 +50,7 @@
 	"home": "~",
 	"ignored_packages":
 	[
+		"LSP-typescript",
 		"Vintage",
 	],
 	"index_exclude_patterns":
