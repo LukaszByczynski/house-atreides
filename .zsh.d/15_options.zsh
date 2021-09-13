@@ -4,7 +4,6 @@ umask 022
 
 HISTSIZE=4096
 SAVEHIST=4096
-HISTFILE=$HOME/.zsh_history
 WORDCHARS=''
 
 setopt ALL_EXPORT
