@@ -1,5 +1,5 @@
 #!/bin/sh
-METALS_VERSION=0.10.4
+METALS_VERSION=0.10.6
 rm /usr/local/bin/metals-emacs
 rm /usr/local/bin/metals-sublime
 cs bootstrap \
