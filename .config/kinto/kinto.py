@@ -100,7 +100,7 @@ define_multipurpose_modmap(
 # [Global modemap] Change modifier keys as in xmodmap
 define_conditional_modmap(lambda wm_class: wm_class.casefold() not in terminals,{
 
-    # Key.CAPSLOCK: Key.RIGHT_CTRL,   # Caps2Cmd
+    # Key.CAPSLOCK: Key.RIGHT_META,  # Caps2Cmd
     # Key.LEFT_META: Key.RIGHT_CTRL,  # Caps2Cmd - Chromebook
 
     # - IBM
@@ -134,6 +134,7 @@ define_conditional_modmap(lambda wm_class: wm_class.casefold() not in terminals,
 
 # [Conditional modmap] Change modifier keys in certain applications
 define_conditional_modmap(re.compile(termStr, re.IGNORECASE), {
+    # Key.CAPSLOCK: Key.RIGHT_META,  # Caps2Cmd
     # - IBM
     # Key.LEFT_ALT: Key.RIGHT_CTRL,     # IBM
     # # Left Ctrl Stays Left Ctrl
@@ -164,9 +165,16 @@ define_conditional_modmap(re.compile(termStr, re.IGNORECASE), {
 
     # - Mac Only
     Key.LEFT_META: Key.RIGHT_CTRL,  # Mac
-    # # Left Ctrl Stays Left Ctrl
+    # Left Ctrl Stays Left Ctrl
     Key.RIGHT_META: Key.RIGHT_CTRL, # Mac - Multi-language (Remove)
     Key.RIGHT_CTRL: Key.LEFT_CTRL,  # Mac - Multi-language (Remove)
+})
+
+define_keymap(re.compile("mpv", re.IGNORECASE),{
+    K("J"): K("Left"),
+    K("L"): K("Right"),
+    K("I"): K("Down"),
+    K("K"): K("Up"),
 })
 
 # Keybindings for IntelliJ
@@ -177,7 +185,7 @@ define_keymap(re.compile("^jetbrains-(?!.*toolbox).*$", re.IGNORECASE),{
     K("C-Key_2"): K("M-Key_2"),                 # Open corresponding tool window
     K("C-Key_3"): K("M-Key_3"),                 # Open corresponding tool window
     K("C-Key_4"): K("M-Key_4"),                 # Open corresponding tool window
-    K("C-Key_5"): K("M-Key_5"),                 # Open corresponding tool window
+    K("C-Key_5"): K("M-Key_5"),                 # OpEn corresponding tool window
     K("C-Key_6"): K("M-Key_6"),                 # Open corresponding tool window
     K("C-Key_7"): K("M-Key_7"),                 # Open corresponding tool window
     K("C-Key_8"): K("M-Key_8"),                 # Open corresponding tool window
@@ -473,16 +481,6 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
     # Fn to Alt style remaps
     K("RM-Enter"): K("insert"),                   # Insert
 
-    # emacs style
-    K("Super-a"): K("Home"),                      # Beginning of Line
-    K("Super-e"): K("End"),                       # End of Line
-    K("Super-b"): K("Left"),
-    K("Super-f"): K("Right"),
-    K("Super-n"): K("Down"),
-    K("Super-p"): K("Up"),
-    K("Super-k"): [K("Shift-End"), K("Backspace")],
-    K("Super-d"): K("Delete"),
-
     # K("M-RC-Space"): K(""),                       # Open Finder - Placeholder
 
     # Wordwise
@@ -507,6 +505,21 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
     K("Alt-Delete"): K("C-Delete"),               # Delete Right Word of Cursor
     # K(""): pass_through_key,                      # cancel
     # K(""): K(""),                                 #
+
+    # razer
+    # K("RSuper-Shift-j"): with_mark(K("Shift-Left")),
+
+    # K("RSuper-j"): with_mark(K("Left")),
+    # K("RSuper-l"): with_mark(K("Right")),
+    # K("RSuper-i"): with_mark(K("Up")),
+    # K("RSuper-k"): with_mark(K("Down")),
+    # K("RSuper-left_brace"): with_mark(K("Page_Up")),
+    # K("RSuper-SEMICOLON"): with_mark(K("Page_Down")),
+    # K("RSuper-right_brace"): with_mark(K("Home")),
+    # K("RSuper-Apostrophe"): with_mark(K("End")),
+    # K("RSuper-Backspace"): with_mark(K("Delete")),
+    # K("RSuper-ESC"): K("GRAVE"),
+    # K("RSuper-Shift-ESC"): K("Shift-GRAVE"),
 }, "General GUI")
 
 define_keymap(lambda wm_class: wm_class.casefold() not in mscodes,{
@@ -699,7 +712,7 @@ define_keymap(re.compile(termStr, re.IGNORECASE),{
     K("RC-F"): K("C-Shift-F"),
     K("RC-G"): K("C-Shift-G"),
     K("RC-H"): K("C-Shift-H"),
-    K("RC-J"): K("C-Shift-J"),
+ #   K("RC-J"): K("C-Shift-J"),
     K("RC-K"): K("C-Shift-K"),
     K("RC-L"): K("C-Shift-L"),
     K("RC-SEMICOLON"): K("C-Shift-SEMICOLON"),
