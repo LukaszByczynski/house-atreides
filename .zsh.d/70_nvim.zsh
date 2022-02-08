@@ -1,0 +1,1 @@
+export VIMCONFIG=~/.config/nvim
