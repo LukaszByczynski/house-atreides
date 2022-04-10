@@ -259,7 +259,7 @@ define_keymap(re.compile("^jetbrains-(?!.*toolbox).*$", re.IGNORECASE),{
     K("Super-M-d"): K("M-Shift-F9"),            # Select configuration and debug
     K("Super-r"): K("Shift-F10"),               # Run
     K("Super-d"): K("Shift-F9"),                # Debug
-    K("Super-Shift-r"): K("C-Shift-F10"),       # Run context configuration from editor
+    #K("Super-Shift-r"): K("C-Shift-F10"),       # Run context configuration from editor
     K("Super-Shift-d"): K("C-Shift-F9"),        # Debug context configuration from editor
     # VCS/Local History
     K("Super-v"): K("M-Grave"),                 # VCS quick popup
@@ -442,7 +442,7 @@ define_keymap(lambda wm_class: wm_class.casefold() not in terminals,{
 # - but remote clients and VM software ought to be set here
 # These are the typical remaps for ALL GUI based apps
 define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
-    # K("RC-Space"): K("Alt-F1"),                   # Default SL - Launch Application Menu (gnome/kde)
+    K("RC-Space"): K("C-Shift-F10"),                   # Default SL - Launch Application Menu (gnome/kde)
     K("RC-F3"):K("Super-d"),                      # Default SL - Show Desktop (gnome/kde,eos)
     K("RC-Super-f"):K("M-F10"),                   # Default SL - Maximize app (gnome/kde)
     # K("Super-Right"):K("C-M-Right"),              # Default SL - Change workspace (budgie)
