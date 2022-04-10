@@ -8,12 +8,24 @@
 
 call plug#begin()
 
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'https://github.com/tpope/vim-commentary'
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'nvim-lua/plenary.nvim'
+" window splitter
+Plug 'https://github.com/beauwilliams/focus.nvim'
 
+" tree bar
+Plug 'nvim-treesitter/nvim-treesitter'
+
+" commentary plugin
+Plug 'https://github.com/tpope/vim-commentary'
+
+" status bar
+Plug 'https://github.com/vim-airline/vim-airline'
+
+" file/code navigation
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" keys sugestion
+Plug 'folke/which-key.nvim'
 
 call plug#end()
 
@@ -25,3 +37,11 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+
+lua << EOF
+  require("which-key").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
