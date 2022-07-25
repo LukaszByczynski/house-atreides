@@ -15,4 +15,6 @@
 	"render_commit_dialog_message_at_top": true,
 	"side_bar_layout": "tabs",
 	"trim_trailing_white_space_on_save": true,
+	"git_binary": "bundled",
+	"ssh_path": "/usr/bin/ssh",
 }
