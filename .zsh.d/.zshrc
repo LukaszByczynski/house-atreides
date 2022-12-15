@@ -7,15 +7,11 @@ fi
 
 # Load personal prompt configuration
 # (to customize prompt, run `p10k configure` or edit ~/.zsh.d/.p10k.zsh.)
-[[ ! -f ~/.zsh.d/.p10k.zsh ]] || source ~/.zsh.d/.p10k.zsh
+[[ -f ~/.zsh.d/.p10k.zsh ]] && source ~/.zsh.d/.p10k.zsh
 
 # Load Powerlevel10k
-if [[ $(uname) = 'Darwin' ]]
-then
-    source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-else
-    source ~/.powerlevel10k/powerlevel10k.zsh-theme
-fi
+[[ -f /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme ]] && source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+[[ -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # Turn extended globbing on
 setopt EXTENDED_GLOB
