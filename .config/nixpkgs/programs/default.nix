@@ -48,9 +48,17 @@ let
         enable = true;
         enableZshIntegration = true;
       };
+
+      # less
+      less.enable = true;
+
+      #k9s
+      k9s.enable = true;
+
     };
   };
 in [
+  ./go
   ./zsh
   more
 ]

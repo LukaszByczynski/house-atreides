@@ -9,6 +9,9 @@ let
     mc        # terminal file commander
     hstr      # history navigator
     nix-tree  # look into nix-tree
+    tldr      # better manual pages
+    p7zip     # packer
+
   ];
 in
 {
@@ -28,7 +31,7 @@ in
     packages = defaultPkgs;
 
     sessionVariables = {
-      DISPLAY = ":0";
+      # DISPLAY = ":0";
       EDITOR = "nvim";
     };
   };
