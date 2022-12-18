@@ -1,5 +1,15 @@
 let
   more = { pkgs, ... }: {
+
+    home.packages = with pkgs; [
+      mc        # terminal file commander
+      hstr      # history navigator
+      nix-tree  # look into nix-tree
+      tldr      # better manual pages
+      p7zip     # packer
+      ripgrep   # recursive grep
+    ];
+
     programs = {
 
       # powerline
