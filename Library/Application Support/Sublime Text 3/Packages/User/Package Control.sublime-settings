@@ -33,6 +33,7 @@
 		"MarkdownLivePreview",
 		"MarkdownTOC",
 		"Maybs Quit",
+		"Nix",
 		"Origami",
 		"Package Control",
 		"PackageResourceViewer",
@@ -46,6 +47,6 @@
 		"Theme - Gravity",
 		"Themr",
 		"TypeScript Syntax",
-		"Vue Syntax Highlight"
+		"Vue Syntax Highlight",
 	],
 }
