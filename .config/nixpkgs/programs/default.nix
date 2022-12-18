@@ -68,6 +68,7 @@ let
     };
   };
 in [
+  ./git
   ./go
   ./zsh
   more
