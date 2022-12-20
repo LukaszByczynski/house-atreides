@@ -4,7 +4,11 @@ let
   initPrelude = ''
     # Make sure ZDOTDIR is ~/.zsh.d
     # ZDOTDIR=~/.zsh.d
-    . ~/.nix-profile/etc/profile.d/nix.sh
+
+    # Nix
+    [[ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]] && . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    [[ -e ~/.nix-profile/etc/profile.d/nix.sh ]] && . ~/.nix-profile/etc/profile.d/nix.sh
+    # End Nix
   '';
 
   initHistory = ''
