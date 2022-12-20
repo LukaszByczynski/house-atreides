@@ -8,6 +8,14 @@ let
       tldr      # better manual pages
       p7zip     # packer
       ripgrep   # recursive grep
+      duf       # pretty disk usage
+      gdu       # disk usage analyzer
+      peco      # interactive filtering
+      fd        # better find
+      hyperfine # benchmark tool
+      asciinema # console recorder
+      lnav      # better logs navigator
+      mtr       # ping + traceroute
     ];
 
     programs = {
@@ -65,12 +73,19 @@ let
       #k9s
       k9s.enable = true;
 
+      # fuzzy search
+      fzf = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
     };
   };
 in [
   ./starship
   ./git
   ./go
+  ./neovim
   ./zsh
   more
 ]
