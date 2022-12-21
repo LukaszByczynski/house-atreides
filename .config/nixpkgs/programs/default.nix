@@ -16,6 +16,8 @@ let
       asciinema # console recorder
       lnav      # better logs navigator
       mtr       # ping + traceroute
+      btop      # better top
+      cachix
     ];
 
     programs = {

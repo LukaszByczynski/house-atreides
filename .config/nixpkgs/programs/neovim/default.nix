@@ -5,7 +5,7 @@ in
 {
   programs.neovim = {
     enable = true;
-    viAlias = false;
+    viAlias = true;
     vimAlias = true;
 
     extraConfig = ''
