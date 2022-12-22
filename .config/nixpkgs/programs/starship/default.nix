@@ -3,7 +3,7 @@
 let
   defaultSettings = {
     format = lib.concatStrings [
-        "[](#9A348E)"
+        "[](#9A348E)"
         "$os"
         "[](bg:#DA627D fg:#9A348E)"
         "$directory"
@@ -25,8 +25,7 @@ let
         "[](bg:#86BBD8 fg:#33658A)"
         "$time"
         "$cmd_duration"
-        "$memory_usage"
-        "[](fg:#33658A)"
+        "[](fg:#33658A)"
       ];
 
       # Disable the blank line at the start of the prompt
