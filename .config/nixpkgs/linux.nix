@@ -5,6 +5,11 @@ let
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
 
+  customNvidiaX11 = pkgs.linuxPackages.nvidia_x11_production.override {
+    libsOnly = true;
+    disable32Bit = true;
+  };
+
 in
 {
   # Let Home Manager install and manage itself.
@@ -19,6 +24,7 @@ in
     sessionVariables = {
       # DISPLAY = ":0";
       EDITOR = "nvim";
+      LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
     };
   };
 
