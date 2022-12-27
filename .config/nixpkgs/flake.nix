@@ -19,6 +19,7 @@
       # supported systems
       supportedSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
+        "x86_64-darwin"
       ];
 
       # allow unfree packages in the supported systems
@@ -39,7 +40,15 @@
           ];
         };
 
+        virmir = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages.x86_64-darwin;
+          modules = [
+            ./osx.nix
+          ];
+        };
+
       };
       defaultPackage.x86_64-linux = self.homeConfigurations.szwagier.activationPackage;
+      defaultPackage.x86_64-darwin = self.homeConfigurations.virmir.activationPackage;
     };
 }
