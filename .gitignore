@@ -1,9 +1,0 @@
-/*
-!/Library
-/Library/**/*
-!Library/Application Support/
-!Library/Application Support/Sublime Text 3/
-!Library/Application Support/Sublime Text 3/Packages/
-!Library/Application Support/Sublime Text 3/Packages/User/
-!.gitconfig
-!.zsh.d
