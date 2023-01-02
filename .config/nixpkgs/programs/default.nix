@@ -22,16 +22,6 @@ let
 
     programs = {
 
-      # powerline
-      # powerline-go = {
-      #   enable = true;
-      #   modules = ["cwd" "git"];
-      #   modulesRight = ["exit" "direnv" "time"];
-      #   settings = {
-      #     numeric-exit-codes = "";
-      #   };
-      # };
-
       # cat replacement
       bat.enable = true;
 
