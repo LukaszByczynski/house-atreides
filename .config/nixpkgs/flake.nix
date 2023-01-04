@@ -46,6 +46,13 @@
             ./osx.nix
           ];
         };
+	
+	mbwork = home-manager.lib.homeManagerConfiguration {
+          pkgs = legacyPackages.x86_64-darwin;
+          modules = [
+            ./osx-work.nix
+	  ];
+	};
 
       };
       defaultPackage.x86_64-linux = self.homeConfigurations.szwagier.activationPackage;
