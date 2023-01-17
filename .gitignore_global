@@ -21,5 +21,7 @@ metals.sbt
 *.sublime-workspace
 *TestLocal.scala
 .tmp
-.sdkmanrc
 project/metals.sbt
+.direnv/*
+.envrc
+default.nix
