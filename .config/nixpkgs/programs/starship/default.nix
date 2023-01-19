@@ -4,8 +4,8 @@ let
   defaultSettings = {
 
     # Increase Starship command scan & duration time-outs
-    scan_timeout = 80;
-    command_timeout = 1000;
+    scan_timeout = 100;
+    command_timeout = 10000;
 
     format = lib.concatStrings [
         "[](#9A348E)"
