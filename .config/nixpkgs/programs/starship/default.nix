@@ -2,6 +2,11 @@
 
 let
   defaultSettings = {
+
+    # Increase Starship command scan & duration time-outs
+    scan_timeout = 80;
+    command_timeout = 1000;
+
     format = lib.concatStrings [
         "[](#9A348E)"
         "$os"
