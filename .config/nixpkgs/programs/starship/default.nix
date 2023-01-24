@@ -9,7 +9,7 @@ let
 
     format = lib.concatStrings [
         "[](#9A348E)"
-        "$os"
+        # "$os"
         "[](bg:#DA627D fg:#9A348E)"
         "$directory"
         "[](fg:#DA627D bg:#FCA17D)"
@@ -48,10 +48,10 @@ let
 
       # An alternative to the username module which displays a symbol that
       # represents the current operating system
-      os = {
-        style = "bg:#9A348E";
-        disabled = false; # Disabled by default
-      };
+      # os = {
+      #   style = "bg:#9A348E";
+      #   disabled = false; # Disabled by default
+      # };
 
       directory = {
         style = "bg:#DA627D";
