@@ -3,7 +3,7 @@
 
   inputs = {
     # Specify the source of Nixpkgs and Home Manager.
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -14,6 +14,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     ...
     } @inputs: let
@@ -31,6 +32,14 @@
           overlays = with inputs; [
           ];
       });
+
+      unstablePackages = supportedSystems (system:
+        import nixpkgs-unstable {
+          inherit system;
+          config = {allowUnfree = true;};
+          overlays = with inputs; [
+          ];
+      });
     in {
       homeConfigurations = {
 
@@ -39,6 +48,9 @@
           modules = [
             ./linux.nix
           ];
+          extraSpecialArgs = {
+            pkgs-unstable = unstablePackages.x86_64-linux;
+          };
         };
 
         virmir = home-manager.lib.homeManagerConfiguration {
@@ -46,14 +58,20 @@
           modules = [
             ./osx.nix
           ];
+          extraSpecialArgs = {
+            pkgs-unstable = unstablePackages.x86_64-darwin;
+          };
         };
 	
-	mbwork = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.x86_64-darwin;
-          modules = [
-            ./osx-work.nix
-	  ];
-	};
+      	mbwork = home-manager.lib.homeManagerConfiguration {
+                pkgs = legacyPackages.x86_64-darwin;
+                modules = [
+                  ./osx-work.nix
+      	  ];
+          extraSpecialArgs = {
+            pkgs-unstable = unstablePackages.x86_64-darwin;
+          };
+        };
 
       };
       defaultPackage.x86_64-linux = self.homeConfigurations.szwagier.activationPackage;

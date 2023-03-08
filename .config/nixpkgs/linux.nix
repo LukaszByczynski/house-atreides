@@ -1,4 +1,4 @@
-{ config, lib, pkgs, stdenv, ... }:
+{ config, lib, pkgs, pkgs-unstable,  stdenv, ... }:
 
 let
   username = "lukaszb";
@@ -6,7 +6,7 @@ let
   configHome = "${homeDirectory}/.config";
 
   # todo: this driver should be taken from unstabkle
-  customNvidiaX11 = pkgs.unstable.linuxPackages.nvidia_x11_production.override {
+  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11_production.override {
     libsOnly = true;
     disable32Bit = true;
   };
@@ -29,7 +29,7 @@ in
       LIBVA_DRIVER_NAME = "nvidia";
       NVD_BACKEND = "direct";
       MOZ_DISABLE_RDD_SANDBOX = "1";
-      # LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
+      LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
     };
   };
 
