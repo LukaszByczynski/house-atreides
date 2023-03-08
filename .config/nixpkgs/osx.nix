@@ -1,10 +1,9 @@
-{ config, lib, pkgs, stdenv, ... }:
+{ config, lib, pkgs, pgks-unstable, stdenv, ... }:
 
 let
   username = "lukasz";
   homeDirectory = "/Users/${username}";
   configHome = "${homeDirectory}/.config";
-
 in
 {
   # Let Home Manager install and manage itself.

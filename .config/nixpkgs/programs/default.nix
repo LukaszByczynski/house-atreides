@@ -1,5 +1,5 @@
 let
-  more = { pkgs, ... }: {
+  more = { pkgs, pkgs-unstable, ... }: {
 
     home.packages = with pkgs; [
       mc        # terminal file commander
