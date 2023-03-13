@@ -51,6 +51,7 @@
 	"ignored_packages":
 	[
 		"LSP-typescript",
+		"TypeScript Syntax",
 		"Vintage",
 	],
 	"index_exclude_patterns":

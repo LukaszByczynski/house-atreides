@@ -2,7 +2,7 @@ let
   more = { pkgs, pkgs-unstable, ... }: {
 
     home.packages = with pkgs; [
-      mc        # terminal file commander
+      pkgs-unstable.mc        # terminal file commander
       hstr      # history navigator
       nix-tree  # look into nix-tree
       tldr      # better manual pages
