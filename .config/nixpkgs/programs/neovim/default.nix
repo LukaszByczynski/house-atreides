@@ -35,7 +35,8 @@ in
     '';
 
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter
+      vim-nix
+			nvim-treesitter
       vim-commentary
       vim-airline
       plenary-nvim
