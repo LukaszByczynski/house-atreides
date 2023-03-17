@@ -46,6 +46,12 @@ in
       vim-mergetool
       vim-repeat
       vim-surround
+      nvim-tree-lua
+      nvim-cmp
+      nvim-ale-diagnostic
+      editorconfig-nvim
+      indent-blankline-nvim
+      lualine-nvim
     ];
  };
 }
