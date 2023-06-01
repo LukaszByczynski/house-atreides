@@ -4,7 +4,7 @@
   inputs = {
     # Specify the source of Nixpkgs and Home Manager.
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -64,10 +64,10 @@
         };
 	
       	mbwork = home-manager.lib.homeManagerConfiguration {
-                pkgs = legacyPackages.x86_64-darwin;
-                modules = [
-                  ./osx-work.nix
-      	  ];
+          pkgs = legacyPackages.x86_64-darwin;
+          modules = [
+            /osx-work.nix
+          ];
           extraSpecialArgs = {
             pkgs-unstable = unstablePackages.x86_64-darwin;
           };

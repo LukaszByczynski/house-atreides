@@ -20,7 +20,7 @@ in
   # paths it should manage.
   home = {
     inherit username homeDirectory;
-    stateVersion = "22.11";
+    stateVersion = "23.05";
 
     sessionVariables = {
       # DISPLAY = ":0";
