@@ -21,6 +21,7 @@ let
       nix-du    # track disk usage by nix roots
       nix-index # for searching files in the packages
       kubectl   # k8s cli tool
+      stress    # cpu stress tool
     ];
 
     programs = {

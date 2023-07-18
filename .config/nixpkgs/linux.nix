@@ -29,7 +29,7 @@ in
       LIBVA_DRIVER_NAME = "nvidia";
       NVD_BACKEND = "direct";
       MOZ_DISABLE_RDD_SANDBOX = "1";
-      #LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
+      LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
     };
   };
 
