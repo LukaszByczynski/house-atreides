@@ -66,7 +66,7 @@
       	mbwork = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-darwin;
           modules = [
-            /osx-work.nix
+            ./osx-work.nix
           ];
           extraSpecialArgs = {
             pkgs-unstable = unstablePackages.x86_64-darwin;
