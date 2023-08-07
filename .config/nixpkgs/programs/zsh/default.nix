@@ -29,6 +29,7 @@ let
     "m_rmnode" = "rm -rf .nuxt node_modules yarn.lock";
     "cat" = "bat";
     "hh" = "hstr";
+    "napi" = "/var/empty/local/bin/napi.sh download";
   };
 
 in {
