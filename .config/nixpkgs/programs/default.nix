@@ -22,6 +22,8 @@ let
       nix-index # for searching files in the packages
       kubectl   # k8s cli tool
       stress    # cpu stress tool
+      wrk2      # perf test
+      ctop      # monitoring docker containers
     ];
 
     programs = {
