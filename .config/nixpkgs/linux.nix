@@ -41,5 +41,6 @@ in
 
   imports = builtins.concatMap import [
     ./programs
+    ./programs-linux
   ];
 }
