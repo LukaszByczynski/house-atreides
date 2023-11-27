@@ -30,6 +30,7 @@ let
     "cat" = "bat";
     "hh" = "hstr";
     "napi" = "/var/empty/local/bin/napi.sh download";
+    "jsmb" = "cd $XDG_RUNTIME_DIR/gvfs";
   };
 
 in {
@@ -40,6 +41,11 @@ in {
     #  eval (direnv hook fish)
     #  any-nix-shell fish --info-right | source
     #'';
+
+    prezto = {
+      enable = true;
+      extraFunctions = ["zmv"];
+    };
 
     # this sources nix in the newly created .zshrc
     initExtra = initPrelude + initHistory;
