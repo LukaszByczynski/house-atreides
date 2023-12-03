@@ -56,7 +56,7 @@ in {
     };
 
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     shellAliases = aliases;
   };
 }

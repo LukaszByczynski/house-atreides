@@ -53,7 +53,7 @@ let
       };
 
       # modern ls
-      exa = {
+      eza = {
         enable = true;
         enableAliases = true;
       };
