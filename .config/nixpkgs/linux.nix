@@ -6,7 +6,7 @@ let
   configHome = "${homeDirectory}/.config";
 
   # todo: this driver should be taken from unstable
-  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11.override {
+  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11_production.override {
     libsOnly = true;
     disable32Bit = false;
   };
