@@ -91,4 +91,5 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"hardware_acceleration": "opengl",
+	"index_files": true,
 }
