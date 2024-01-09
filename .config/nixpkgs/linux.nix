@@ -6,8 +6,8 @@ let
   configHome = "${homeDirectory}/.config";
 
   # todo: this driver should be taken from unstable
-  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11_beta.override {
-    libsOnly = true;
+  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11.override {
+    # libsOnly = true;
     disable32Bit = false;
   };
 
@@ -30,6 +30,7 @@ in
       NVD_BACKEND = "direct";
       MOZ_DISABLE_RDD_SANDBOX = "1";
       LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
+      GBM_BACKENDS_PATH="${customNvidiaX11}/lib/gbm";
     };
   };
 
