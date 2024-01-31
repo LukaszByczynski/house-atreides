@@ -3,25 +3,28 @@ let
 
     home.packages = with pkgs; [
       pkgs-unstable.mc        # terminal file commander
-      hstr      # history navigator
-      nix-tree  # look into nix-tree
-      tldr      # better manual pages
-      p7zip     # packer
-      ripgrep   # recursive grep
-      duf       # pretty disk usage
-      gdu       # disk usage analyzer
-      peco      # interactive filtering
-      fd        # better find
-      hyperfine # benchmark tool
-      asciinema # console recorder
-      lnav      # better logs navigator
-      mtr       # ping + traceroute
-      btop      # better top
-      cachix    # cache nix artifacts
-      nix-index # for searching files in the packages
-      kubectl   # k8s cli tool
-      stress    # cpu stress tool
-      ctop      # monitoring docker containers
+      hstr            # history navigator
+      nix-tree        # look into nix-tree
+      tldr            # better manual pages
+      p7zip           # packer
+      ripgrep         # recursive grep
+      duf             # pretty disk usage
+      gdu             # disk usage analyzer
+      peco            # interactive filtering
+      fd              # better find
+      hyperfine       # benchmark tool
+      asciinema       # console recorder
+      lnav            # better logs navigator
+      mtr             # ping + traceroute
+      btop            # better top
+      cachix          # cache nix artifacts
+      nix-index       # for searching files in the packages
+      kubectl         # k8s cli tool
+      stress          # cpu stress tool
+      ctop            # monitoring docker containers
+      gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
+      dive            # A tool for exploring a docker image
+      docker-client   # docker cli
     ];
 
     programs = {
