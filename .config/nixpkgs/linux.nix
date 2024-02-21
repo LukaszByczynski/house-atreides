@@ -7,7 +7,7 @@ let
 
   # todo: this driver should be taken from unstable
   customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11.override {
-    # libsOnly = true;
+    libsOnly = true;
     disable32Bit = false;
   };
 
