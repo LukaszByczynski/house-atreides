@@ -25,6 +25,10 @@ let
       gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
       dive            # A tool for exploring a docker image
       docker-client   # docker cli
+
+      pkgs-unstable.gopls     # go language server
+      pkgs-unstable.go-tools  # go-tools (static analyzer, etc)
+      pkgs-unstable.delve     # go debugger
     ];
 
     programs = {
