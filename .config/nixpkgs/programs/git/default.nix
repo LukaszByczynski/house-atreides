@@ -36,6 +36,7 @@ let
     include = {
       path = "~/.gitconfig.local";
     };
+    diff.tool = "vimdiff";
   };
 
   rg = "${pkgs.ripgrep}/bin/rg";
