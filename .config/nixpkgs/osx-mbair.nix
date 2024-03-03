@@ -13,10 +13,12 @@ in
   # paths it should manage.
   home = {
     inherit username homeDirectory;
-    stateVersion = "23.05";
+
+    # The state version is required and should stay at the version you
+    # originally installed.
+    stateVersion = "23.11";
 
     sessionVariables = {
-      # DISPLAY = ":0";
       EDITOR = "nvim";
     };
   };
