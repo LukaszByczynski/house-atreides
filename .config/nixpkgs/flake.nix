@@ -22,7 +22,7 @@
       supportedSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
         "x86_64-darwin"
-	"aarch64-darwin"
+        "aarch64-darwin"
       ];
 
       # allow unfree packages in the supported systems
@@ -54,15 +54,15 @@
           };
         };
 
-	mbair = home-manager.lib.homeManagerConfiguration {
-	  pkgs = legacyPackages.aarch64-darwin;
-	  modules = [
-	    ./osx-mbair.nix
-	  ];
-	  extraSpecialArgs = {
-	    pkgs-unstable = unstablePackages.aarch64-darwin;
-	  };	
-	};
+      	mbair = home-manager.lib.homeManagerConfiguration {
+      	  pkgs = legacyPackages.aarch64-darwin;
+      	  modules = [
+      	    ./osx-mbair.nix
+      	  ];
+      	  extraSpecialArgs = {
+      	    pkgs-unstable = unstablePackages.aarch64-darwin;
+      	  };
+      	};
 
         virmir = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-darwin;
