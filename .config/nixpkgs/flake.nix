@@ -29,7 +29,12 @@
       legacyPackages = supportedSystems (system:
         import nixpkgs {
           inherit system;
-          config = {allowUnfree = true;};
+          config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [
+              "python-2.7.18.6"
+            ];
+          };
           overlays = with inputs; [
           ];
       });
@@ -52,6 +57,7 @@
           extraSpecialArgs = {
             pkgs-unstable = unstablePackages.x86_64-linux;
           };
+
         };
 
       	mbair = home-manager.lib.homeManagerConfiguration {
