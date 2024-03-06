@@ -25,6 +25,7 @@ let
       gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
       dive            # A tool for exploring a docker image
       docker-client   # docker cli
+      docker-compose  # docker compose
       fx              # json viewer
 
       pkgs-unstable.gopls     # go language server
