@@ -2,7 +2,16 @@ let
   more = { pkgs, pkgs-unstable, ... }: {
 
     home.packages = with pkgs; [
-      pkgs-unstable.mc        # terminal file commander
+      pkgs-unstable.mc              # terminal file commander
+      pkgs-unstable.btop            # better top
+      pkgs-unstable.kubectl         # k8s cli tool
+      pkgs-unstable.ctop            # monitoring docker containers
+      pkgs-unstable.gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
+      pkgs-unstable.dive            # A tool for exploring a docker image
+      pkgs-unstable.docker-client   # docker cli
+      pkgs-unstable.docker-compose  # docker compose
+      pkgs-unstable.colima          # container engine for docker
+
       hstr            # history navigator
       nix-tree        # look into nix-tree
       tldr            # better manual pages
@@ -16,16 +25,9 @@ let
       asciinema       # console recorder
       lnav            # better logs navigator
       mtr             # ping + traceroute
-      btop            # better top
       cachix          # cache nix artifacts
       nix-index       # for searching files in the packages
-      kubectl         # k8s cli tool
       stress          # cpu stress tool
-      ctop            # monitoring docker containers
-      gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
-      dive            # A tool for exploring a docker image
-      docker-client   # docker cli
-      docker-compose  # docker compose
       fx              # json viewer
 
       pkgs-unstable.gopls     # go language server
