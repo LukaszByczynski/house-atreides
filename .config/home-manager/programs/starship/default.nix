@@ -75,6 +75,7 @@ let
       git_status = {
         style = "bg:#FCA17D";
         format = "[$all_status$ahead_behind ]($style)";
+        disabled = true;
       };
 
       golang = {
