@@ -12,7 +12,7 @@ let
         EDITOR = "nvim";
         NIX_PATH="nixpkgs=${pkgs-unstable.path}:nixpkgs_stable=${pkgs.path}";
         NIXPKGS_ALLOW_UNFREE=1;
-        DOCKER_HOST="unix://$HOME/.colima/docker.sock";
+        DOCKER_HOST="unix://$HOME/.config/colima/docker.sock";
       };
     };
 
