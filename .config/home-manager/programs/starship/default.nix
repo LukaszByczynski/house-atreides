@@ -4,7 +4,7 @@ let
   defaultSettings = {
 
     # Increase Starship command scan & duration time-outs
-    scan_timeout = 100;
+    scan_timeout = 50;
     command_timeout = 10000;
 
     format = lib.concatStrings [
@@ -14,7 +14,6 @@ let
         "$directory"
         "[](fg:#DA627D bg:#FCA17D)"
         "$git_branch"
-        "$git_status"
         "[](fg:#FCA17D)"
         " $c"
       ];

@@ -52,6 +52,9 @@ in {
 
     history = {
       extended = true;
+      ignoreAllDups = true;
+      size = 1000;
+      save = 1000;
       path = "${config.home.homeDirectory}/.zsh.d/.zsh_history";
     };
 
