@@ -29,6 +29,7 @@ let
       nix-index       # for searching files in the packages
       stress          # cpu stress tool
       fx              # json viewer
+      rename          # rename tool
 
       pkgs-unstable.gopls     # go language server
       pkgs-unstable.go-tools  # go-tools (static analyzer, etc)
