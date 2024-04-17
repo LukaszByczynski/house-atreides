@@ -37,11 +37,6 @@ in {
   programs.zsh = {
     enable = true;
 
-    #interactiveShellInit = ''
-    #  eval (direnv hook fish)
-    #  any-nix-shell fish --info-right | source
-    #'';
-
     prezto = {
       enable = true;
       extraFunctions = ["zmv"];
