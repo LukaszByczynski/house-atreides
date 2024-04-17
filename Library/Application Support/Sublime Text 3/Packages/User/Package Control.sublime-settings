@@ -1,10 +1,5 @@
 {
 	"bootstrapped": true,
-	"in_process_packages":
-	[
-		"Package Control",
-		"TypeScript Syntax",
-	],
 	"installed_packages":
 	[
 		"A File Icon",
@@ -50,5 +45,8 @@
 		"Themr",
 		"TypeScript Syntax",
 		"Vue Syntax Highlight",
+	],
+	"in_process_packages":
+	[
 	],
 }
