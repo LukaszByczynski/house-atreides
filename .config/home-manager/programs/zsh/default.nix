@@ -53,7 +53,7 @@ in {
       path = "${config.home.homeDirectory}/.zsh.d/.zsh_history";
     };
 
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = aliases;
   };

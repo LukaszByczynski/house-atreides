@@ -66,7 +66,7 @@ let
       # modern ls
       eza = {
         enable = true;
-        enableAliases = true;
+        enableBashIntegration = true;
       };
 
       # jumping over dirs with history
