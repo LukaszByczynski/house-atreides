@@ -34,6 +34,7 @@ let
       pkgs-unstable.gopls     # go language server
       pkgs-unstable.go-tools  # go-tools (static analyzer, etc)
       pkgs-unstable.delve     # go debugger
+      pkgs-unstable.helix     # vi replecment editor
     ];
 
     programs = {
