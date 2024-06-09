@@ -13,6 +13,7 @@ let
         NIX_PATH="nixpkgs=${pkgs-unstable.path}:nixpkgs_stable=${pkgs.path}";
         NIXPKGS_ALLOW_UNFREE=1;
         DOCKER_HOST="unix://$HOME/.config/colima/docker.sock";
+        PATH="$PATH:$HOME/.local/bin";
       };
     };
 
