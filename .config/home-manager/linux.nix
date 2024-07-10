@@ -24,6 +24,7 @@ in
       MOZ_DISABLE_RDD_SANDBOX = "1";
       LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
       GBM_BACKENDS_PATH="${customNvidiaX11}/lib/gbm";
+      DOCKER_HOST="unix://$HOME/.config/colima/docker.sock";
     };
   };
 

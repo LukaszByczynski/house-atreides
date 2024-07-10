@@ -10,6 +10,10 @@ in
   # paths it should manage.
   home = {
     inherit username homeDirectory;
+
+    sessionVariables = {
+      DOCKER_HOST="unix://$HOME/.colima/docker.sock";
+    };
   };
 
   imports = builtins.concatMap import [
