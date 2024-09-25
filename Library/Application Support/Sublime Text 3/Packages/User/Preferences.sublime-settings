@@ -1,17 +1,8 @@
 {
-	"added_words":
+	"ignored_packages":
 	[
-		"hypervisor",
-		"Virtualbox",
-		"Ubuntu",
-		"Artifactory",
-		"interpolator",
-		"classpath",
-		"classloader",
-		"filesystem"
+		"Vintage",
 	],
-	"always_show_minimap_viewport": true,
-	"animation_enabled": false,
 	"binary_file_patterns":
 	[
 		"*.dds",
@@ -33,50 +24,22 @@
 		"project/project/**",
 		"target/**"
 	],
+	"always_show_minimap_viewport": true,
+	"animation_enabled": false,
 	"block_caret": false,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Colorsublime - Themes/cache/Colorsublime-Themes-master/themes/1Pastel.tmTheme",
 	"default_line_ending": "unix",
 	"enable_tab_scrolling": true,
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
 	"font_face": "Iosevka",
 	"font_size": 16,
-	"gpu_window_buffer": false,
+	"hardware_acceleration": "opengl",
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"home": "~",
-	"ignored_packages":
-	[
-		"LSP-typescript",
-		"Package Control",
-		"TypeScript Syntax",
-		"Vintage",
-	],
-	"index_exclude_patterns":
-	[
-		"node_modules/"
-	],
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
-	"lsp_format_on_save": true,
-	"margin": 0,
-	"material_theme_accent_yellow": true,
-	"material_theme_big_fileicons": true,
-	"material_theme_bold_tab": true,
-	"material_theme_bullet_tree_indicator": true,
-	"material_theme_compact_panel": true,
-	"material_theme_compact_sidebar": true,
-	"material_theme_contrast_mode": true,
-	"material_theme_panel_separator": true,
-	"material_theme_small_tab": true,
-	"material_theme_tabs_autowidth": false,
-	"material_theme_titlebar": true,
-	"one_dark_native_title_bar": false,
-	"one_dark_show_scroll_tabs": false,
-	"one_dark_show_tabs_dropdown": false,
+	"index_files": true,
 	"overlay_scroll_bars": false,
 	"popup_shadows": false,
 	"save_on_focus_lost": true,
@@ -89,9 +52,8 @@
 	"spacegray_fileicons": true,
 	"spell_check": true,
 	"tab_size": 2,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "Gravity.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"hardware_acceleration": "opengl",
-	"index_files": false,
+	"color_scheme": "Monokai.sublime-color-scheme",
 }
