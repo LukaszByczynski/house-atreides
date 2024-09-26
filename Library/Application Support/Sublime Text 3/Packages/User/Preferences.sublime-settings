@@ -24,6 +24,8 @@
 		"project/project/**",
 		"target/**"
 	],
+	"auto_hide_menu": true,
+	"highlight_modified_tabs": true,
 	"always_show_minimap_viewport": true,
 	"animation_enabled": false,
 	"block_caret": false,
@@ -52,8 +54,8 @@
 	"spacegray_fileicons": true,
 	"spell_check": true,
 	"tab_size": 2,
-	"theme": "Gravity.sublime-theme",
+	"theme": "Reverse Gravity.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"color_scheme": "Monokai.sublime-color-scheme",
+	"color_scheme": "Packages/Dracula Pro/Dracula Pro (Alucard).tmTheme",
 }
