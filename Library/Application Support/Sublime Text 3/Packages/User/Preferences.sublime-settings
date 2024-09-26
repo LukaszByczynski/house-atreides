@@ -2,6 +2,7 @@
 	"ignored_packages":
 	[
 		"Vintage",
+		"Rust",
 	],
 	"binary_file_patterns":
 	[
@@ -40,7 +41,7 @@
 	"font_size": 16,
 	"hardware_acceleration": "opengl",
 	"highlight_line": true,
-	"highlight_modified_tabs": true,
+	/*"highlight_modified_tabs": true,*/
 	"index_files": true,
 	"overlay_scroll_bars": false,
 	"popup_shadows": false,
@@ -54,8 +55,8 @@
 	"spacegray_fileicons": true,
 	"spell_check": true,
 	"tab_size": 2,
-	"theme": "Reverse Gravity.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"color_scheme": "Packages/Dracula Pro/Dracula Pro (Alucard).tmTheme",
+	"color_scheme": "Bass Biohack.sublime-color-scheme",
 }
