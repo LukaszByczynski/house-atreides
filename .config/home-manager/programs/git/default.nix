@@ -77,7 +77,8 @@ in
       cm = "commit -m";
       ca = "commit -am";
       dc = "diff --cached";
-      prune-branches = "!git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d";
+      #prune-branches = "!git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D";
+      prune-branches = "!LANG=en_EN git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D";
     };
   };
 }
