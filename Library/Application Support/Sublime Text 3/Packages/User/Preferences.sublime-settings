@@ -1,8 +1,6 @@
 {
 	"ignored_packages":
 	[
-		"Vintage",
-		"Rust",
 	],
 	"binary_file_patterns":
 	[
