@@ -35,7 +35,7 @@ let
       pkgs-unstable.go-tools  # go-tools (static analyzer, etc)
       pkgs-unstable.delve     # go debugger
 
-      pkgs-unstable.rustup
+      #pkgs-unstable.rustup
     ];
 
     programs = {
