@@ -23,7 +23,6 @@ let
       fd              # better find
       hyperfine       # benchmark tool
       asciinema       # console recorder
-      #lnav            # better logs navigator
       mtr             # ping + traceroute
       cachix          # cache nix artifacts
       nix-index       # for searching files in the packages
