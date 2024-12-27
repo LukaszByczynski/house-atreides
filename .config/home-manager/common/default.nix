@@ -12,7 +12,7 @@ let
         EDITOR = "hx";
         NIX_PATH="nixpkgs=${pkgs-unstable.path}:nixpkgs_stable=${pkgs.path}";
         NIXPKGS_ALLOW_UNFREE=1;
-        PATH="$PATH:$HOME/.local/bin";
+        PATH="$PATH:$HOME/.local/bin:$GOPATH/bin";
       };
     };
 
