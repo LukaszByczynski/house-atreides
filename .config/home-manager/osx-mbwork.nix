@@ -20,5 +20,6 @@ in
   imports = builtins.concatMap import [
     ./common
     ./programs
+    ./programs-mbwork
   ];
 }

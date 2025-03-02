@@ -81,17 +81,18 @@
         };
 	
       	mbwork = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.x86_64-darwin;
+          pkgs = legacyPackages.aarch64-darwin;
           modules = [
-            ./osx-work.nix
+            ./osx-mbwork.nix
           ];
           extraSpecialArgs = {
-            pkgs-unstable = unstablePackages.x86_64-darwin;
+            pkgs-unstable = unstablePackages.aarch64-darwin;
           };
         };
 
       };
       defaultPackage.x86_64-linux = self.homeConfigurations.szwagier.activationPackage;
       defaultPackage.x86_64-darwin = self.homeConfigurations.virmir.activationPackage;
+      defaultPackage.aarch64-darwin = self.homeConfigurations.mbair.activationPackage;
     };
 }

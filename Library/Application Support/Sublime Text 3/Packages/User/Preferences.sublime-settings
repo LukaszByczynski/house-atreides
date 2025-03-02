@@ -1,6 +1,8 @@
 {
 	"ignored_packages":
 	[
+		"LSP",
+		"TypeScript Syntax",
 		"Vintage",
 	],
 	"binary_file_patterns":
