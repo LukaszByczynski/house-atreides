@@ -5,7 +5,7 @@ let
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
 
-  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11.override {
+  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11_production.override {
     libsOnly = true;
     disable32Bit = false;
   };
