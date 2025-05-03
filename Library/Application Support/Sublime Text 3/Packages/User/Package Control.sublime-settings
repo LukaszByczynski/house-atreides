@@ -60,6 +60,5 @@
 	"in_process_packages":
 	[
 		"LSP",
-		"TypeScript Syntax",
 	],
 }
