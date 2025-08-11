@@ -22,9 +22,8 @@ in
       LIBVA_DRIVER_NAME = "nvidia";
       NVD_BACKEND = "direct";
       MOZ_DISABLE_RDD_SANDBOX = "1";
-      #MOZ_ENABLE_WAYLAND=1;
       LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
-      GBM_BACKENDS_PATH="${customNvidiaX11}/lib/gbm";
+      GBM_BACKENDS_PATH2="${customNvidiaX11}/lib/gbm";
       DOCKER_HOST="unix://$HOME/.config/colima/docker.sock";
     };
   };

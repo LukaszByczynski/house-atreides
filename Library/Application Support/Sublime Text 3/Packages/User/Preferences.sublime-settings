@@ -1,7 +1,6 @@
 {
 	"ignored_packages":
 	[
-		"LSP",
 		"Vintage",
 	],
 	"binary_file_patterns":
