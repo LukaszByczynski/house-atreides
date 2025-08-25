@@ -30,11 +30,11 @@ let
       fx              # json viewer
       rename          # rename tool
 
+      devenv
+
       pkgs-unstable.gopls     # go language server
       pkgs-unstable.go-tools  # go-tools (static analyzer, etc)
       pkgs-unstable.delve     # go debugger
-
-      #pkgs-unstable.rustup
     ];
 
     programs = {
