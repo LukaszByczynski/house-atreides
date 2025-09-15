@@ -3,7 +3,7 @@
 set -e
 
 # jump to workdir
-cd ~/.config/nixpkgs/
+cd ~/.config/home-manager/
 
 # install nix standalone
 sh <(curl -L https://nixos.org/nix/install) --no-daemon

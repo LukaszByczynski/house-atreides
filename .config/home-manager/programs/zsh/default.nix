@@ -43,7 +43,7 @@ in {
     };
 
     # this sources nix in the newly created .zshrc
-    initExtra = initPrelude + initHistory;
+    initContent = initPrelude + initHistory;
 
     history = {
       extended = true;
