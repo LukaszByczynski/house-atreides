@@ -18,20 +18,26 @@ let
       bindkey -s "\C-r" "hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
   '';
 
-  aliases = {
-    ".." = "cd ..";
-    "ff" = "fzf";
-    "vs" = "code .";
-    "sm" = "smerge .";
-    "m_import" = "rm -rf .bloop .metals; sbt bloopInstall";
-    "m_rmmetals" = "rm -rf .bloop .metals";
-    "m_rmtarget" = "find . -type d -name target -exec rm -rf {} \;";
-    "m_rmnode" = "rm -rf .nuxt node_modules yarn.lock";
-    "cat" = "bat";
-    "hh" = "hstr";
-    "napi" = "/var/empty/local/bin/napi.sh download";
-    "jsmb" = "cd $XDG_RUNTIME_DIR/gvfs";
-  };
+  baseAliases = {
+      ".." = "cd ..";
+      "ff" = "fzf";
+      "vs" = "code .";
+      "sm" = "smerge .";
+      "m_import" = "rm -rf .bloop .metals; sbt bloopInstall";
+      "m_rmmetals" = "rm -rf .bloop .metals";
+      "m_rmtarget" = "find . -type d -name target -exec rm -rf {} \;";
+      "m_rmnode" = "rm -rf .nuxt node_modules yarn.lock";
+      "cat" = "bat";
+      "hh" = "hstr";
+      "napi" = "/var/empty/local/bin/napi.sh download";
+      "jsmb" = "cd $XDG_RUNTIME_DIR/gvfs";
+    };
+
+  linuxAliases = if pkgs.stdenv.isLinux then {
+    "zed" = "flatpak run dev.zed.Zed";
+  } else {};
+
+  aliases = baseAliases // linuxAliases;
 
 in {
   programs.zsh = {
