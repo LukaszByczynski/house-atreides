@@ -30,7 +30,8 @@ let
       fx              # json viewer
       rename          # rename tool
 
-      devenv
+      devenv          # development env tool
+      nil             # language server for NIX
 
       pkgs-unstable.gopls     # go language server
       pkgs-unstable.go-tools  # go-tools (static analyzer, etc)
