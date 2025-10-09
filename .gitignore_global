@@ -22,7 +22,21 @@ metals.sbt
 *TestLocal.scala
 .tmp
 project/metals.sbt
-.direnv/*
 .envrc
 default.nix
 .venv/*
+
+
+# Devenv
+devenv.nix
+devenv.lock
+devenv.yaml
+.devenv/*
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
