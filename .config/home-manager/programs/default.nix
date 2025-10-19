@@ -11,6 +11,12 @@ let
       pkgs-unstable.docker-client   # docker cli
       pkgs-unstable.docker-compose  # docker compose
       pkgs-unstable.colima          # container engine for docker
+      pkgs-unstable.devenv          # development env tool
+      pkgs-unstable.nil             # language server for NIX
+
+      pkgs-unstable.gopls           # go language server
+      pkgs-unstable.go-tools        # go-tools (static analyzer, etc)
+      pkgs-unstable.delve           # go debugger
 
       hstr            # history navigator
       nix-tree        # look into nix-tree
@@ -29,13 +35,6 @@ let
       stress          # cpu stress tool
       fx              # json viewer
       rename          # rename tool
-
-      devenv          # development env tool
-      nil             # language server for NIX
-
-      pkgs-unstable.gopls     # go language server
-      pkgs-unstable.go-tools  # go-tools (static analyzer, etc)
-      pkgs-unstable.delve     # go debugger
     ];
 
     programs = {
