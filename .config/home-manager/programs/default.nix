@@ -6,7 +6,6 @@ let
       pkgs-unstable.btop            # better top
       pkgs-unstable.kubectl         # k8s cli tool
       pkgs-unstable.ctop            # monitoring docker containers
-      pkgs-unstable.gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
       pkgs-unstable.dive            # A tool for exploring a docker image
       pkgs-unstable.docker-client   # docker cli
       pkgs-unstable.docker-compose  # docker compose
@@ -18,6 +17,7 @@ let
       pkgs-unstable.go-tools        # go-tools (static analyzer, etc)
       pkgs-unstable.delve           # go debugger
 
+      gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
       hstr            # history navigator
       nix-tree        # look into nix-tree
       tldr            # better manual pages
