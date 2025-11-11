@@ -1,5 +1,5 @@
 let
-  more = { pkgs, pkgs-unstable, ... }: {
+  more = { pkgs, pkgs-unstable, lib, ... }: {
 
     home.packages = with pkgs; [
       pkgs-unstable.mc              # terminal file commander
@@ -17,27 +17,30 @@ let
       pkgs-unstable.go-tools        # go-tools (static analyzer, etc)
       pkgs-unstable.delve           # go debugger
 
-      gitui           # GitUI provides you with the comfort of a git GUI but right in your terminal
-      hstr            # history navigator
       nix-tree        # look into nix-tree
       tldr            # better manual pages
       p7zip           # packer
-      ripgrep         # recursive grep
       duf             # pretty disk usage
       gdu             # disk usage analyzer
       peco            # interactive filtering
-      fd              # better find
       hyperfine       # benchmark tool
-      asciinema       # console recorder
       mtr             # ping + traceroute
       cachix          # cache nix artifacts
-      nix-index       # for searching files in the packages
       stress          # cpu stress tool
       fx              # json viewer
       rename          # rename tool
+      ydiff
     ];
 
     programs = {
+
+      #asciinema.enable = true;
+
+      # recursive grep
+      ripgrep.enable = true;
+
+      # better find
+      fd.enable = true;
 
       # cat replacement
       bat.enable = true;
@@ -46,6 +49,16 @@ let
       broot = {
         enable = true;
         enableZshIntegration = true;
+      };
+
+      lazygit = {
+        enable = true;
+        settings = {
+          gui.sidePanelWidth =  0.2; # gives you more space to show things side-by-side
+          git.pagers = [
+            {pager = "ydiff -p cat -s --wrap --width={{columnWidth}}";}
+          ];
+        };
       };
 
       # a shell extension that manages your environment
@@ -75,6 +88,9 @@ let
         enable = true;
         enableZshIntegration = true;
       };
+
+      # history navigator
+      hstr.enable = true;
 
       # less
       less.enable = true;
