@@ -3,6 +3,7 @@ let
 
     home.packages = with pkgs; [
       google-cloud-sdk   # gcloud sdk
+      awscli
     ];
   };
 in [
