@@ -41,7 +41,7 @@
 	"hardware_acceleration": "opengl",
 	"highlight_line": true,
 	/*"highlight_modified_tabs": true,*/
-	"index_files": true,
+	"index_files": false,
 	"overlay_scroll_bars": false,
 	"popup_shadows": false,
 	"save_on_focus_lost": true,
@@ -57,5 +57,5 @@
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"color_scheme": "Bass Biohack.sublime-color-scheme",
+	"color_scheme": "Bass Fuji.sublime-color-scheme",
 }
