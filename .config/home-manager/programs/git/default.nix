@@ -7,7 +7,9 @@ let
       pager  = "delta";
       excludesfile = "~/.gitignore_global";
     };
-    init.defaultBranch = "main";
+    init = {
+      defaultBranch = "main";
+    };
     merge = {
       conflictStyle = "diff3";
       tool          = "vim_mergetool";
@@ -19,14 +21,42 @@ let
     color = {
       ui = true;
     };
-    mergetool."vim_mergetool" = {
-      #cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"";
-      # this command requires the vim-mergetool plugin
-      cmd    = "nvim -f -c \"MergetoolStart\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"";
-      prompt = false;
+    diff = {
+      tool = "vimdiff";
+      algorithm = "histogram";    # Clearer diffs on moved/edited lines
+      colorMoved = "plain";       # Highlight moved blocks in diffs
+      mnemonicPrefix = true;    # More intuitive refs in diff output
     };
-    pull.rebase = false;
-    push.autoSetupRemote = true;
+    column = {
+      ui = "auto"; # output in column when possible
+    };
+    commit = {
+      verbose = true; # Include diff comment in commit message template
+    };
+    mergetool = {
+      "vim_mergetool" = {
+        #cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"";
+        # this command requires the vim-mergetool plugin
+        cmd    = "nvim -f -c \"MergetoolStart\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"";
+        prompt = false;
+      };
+    };
+    branch = {
+      sort = "-committerdate";    # Sort branches by most recent commit first
+    };
+    tag = {
+      sort = "-version:refname";  # Sort version numbers as you would expect
+    };
+    rerere = {
+      enabled = true;           # Record and reuse conflict resolutions
+	    autoupdate = true;        # Apply stored conflict resolutions automatically 
+    };
+    pull = {
+      rebase = false;
+    };
+    push = {
+      autoSetupRemote = true;
+    };
     url = {
       "https://github.com/".insteadOf = "gh:";
       "ssh://git@github.com".pushInsteadOf = "gh:";
@@ -36,9 +66,7 @@ let
     include = {
       path = "~/.gitconfig.local";
     };
-    diff.tool = "vimdiff";
   };
-
   rg = "${pkgs.ripgrep}/bin/rg";
 in
 {
