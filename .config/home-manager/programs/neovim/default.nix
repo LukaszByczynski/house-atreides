@@ -8,81 +8,124 @@ in
     viAlias = true;
     vimAlias = true;
 
-    extraConfig = ''
-      :set number
-      :set relativenumber
-      :set autoindent
-      :set smarttab
-      :set tabstop=2
-      :set shiftwidth=2
-      :set mouse=a
+    extraPackages = with pkgs; [
+      # LazyVim
+      lua-language-server
+      stylua
+      # Telescope
+      ripgrep
+    ];
 
-      nnoremap <leader>ff <cmd>Telescope find_files<cr>
-      nnoremap <leader>fc <cmd>Telescope git_files<cr>
-      nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-      nnoremap <leader>fb <cmd>Telescope buffers<cr>
-      nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-      lua << EOF
-        require("which-key").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-
-        require("mason").setup({
-            ui = {
-                icons = {
-                    package_installed = "📦",
-                    package_pending = "📦𐄡",
-                    package_uninstalled = "𐄡",
-                },
-            }
-        })
-
-        local rt = require("rust-tools")
-        rt.setup({
-          server = {
-            on_attach = function(_, bufnr)
-              -- Hover actions
-              vim.keymap.set("n", "<Tab>", rt.hover_actions.hover_actions, { buffer = bufnr })
-              -- Code action groups
-              vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    extraLuaConfig =
+      let
+        plugins = with pkgs.vimPlugins; [
+          # LazyVim
+          LazyVim
+          bufferline-nvim
+          cmp-buffer
+          cmp-nvim-lsp
+          cmp-path
+          cmp_luasnip
+          conform-nvim
+          dashboard-nvim
+          dressing-nvim
+          flash-nvim
+          friendly-snippets
+          gitsigns-nvim
+          indent-blankline-nvim
+          lualine-nvim
+          neo-tree-nvim
+          neoconf-nvim
+          neodev-nvim
+          noice-nvim
+          nui-nvim
+          nvim-cmp
+          nvim-lint
+          nvim-lspconfig
+          nvim-notify
+          nvim-spectre
+          nvim-treesitter
+          nvim-treesitter-context
+          nvim-treesitter-textobjects
+          nvim-ts-autotag
+          nvim-ts-context-commentstring
+          nvim-web-devicons
+          persistence-nvim
+          plenary-nvim
+          telescope-fzf-native-nvim
+          telescope-nvim
+          todo-comments-nvim
+          tokyonight-nvim
+          trouble-nvim
+          vim-illuminate
+          vim-startuptime
+          which-key-nvim
+          { name = "LuaSnip"; path = luasnip; }
+          { name = "catppuccin"; path = catppuccin-nvim; }
+          { name = "mini.ai"; path = mini-nvim; }
+          { name = "mini.bufremove"; path = mini-nvim; }
+          { name = "mini.comment"; path = mini-nvim; }
+          { name = "mini.indentscope"; path = mini-nvim; }
+          { name = "mini.pairs"; path = mini-nvim; }
+          { name = "mini.surround"; path = mini-nvim; }
+        ];
+        mkEntryFromDrv = drv:
+          if lib.isDerivation drv then
+            { name = "${lib.getName drv}"; path = drv; }
+          else
+            drv;
+        lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
+      in
+      ''
+        require("lazy").setup({
+          defaults = {
+            lazy = true,
+          },
+          dev = {
+            -- reuse files from pkgs.vimPlugins.*
+            path = "${lazyPath}",
+            patterns = { "" },
+            -- fallback to download
+            fallback = true,
+          },
+          spec = {
+            { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+            -- The following configs are needed for fixing lazyvim on nix
+            -- force enable telescope-fzf-native.nvim
+            { "nvim-telescope/telescope-fzf-native.nvim", enabled = true },
+            -- disable mason.nvim, use programs.neovim.extraPackages
+            { "williamboman/mason-lspconfig.nvim", enabled = false },
+            { "williamboman/mason.nvim", enabled = false },
+            -- import/override with your plugins
+            { import = "plugins" },
+            -- treesitter handled by xdg.configFile."nvim/parser", put this line at the end of spec to clear ensure_installed
+            { "nvim-treesitter/nvim-treesitter",
+             opts = function(_, opts)
+              opts.ensure_installed = {}
             end,
+            },
           },
         })
-
-
-        -- local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-        -- vim.keymap.set("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
-        -- vim.keymap.set("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
-
-        require("mason-lspconfig").setup()
-      EOF
-    '';
+      '';
 
     plugins = with pkgs.vimPlugins; [
-      vim-nix
-			nvim-treesitter
-      vim-commentary
-      vim-airline
-      plenary-nvim
-      telescope-nvim
-      which-key-nvim
-      multiple-cursors
-      vim-mergetool
-      vim-repeat
-      vim-surround
-      nvim-tree-lua
-      nvim-cmp
-      nvim-ale-diagnostic
-      editorconfig-nvim
-      indent-blankline-nvim
-      lualine-nvim
-      mason-nvim
-      mason-lspconfig-nvim
-      rust-tools-nvim
-      VimCompletesMe
+      lazy-nvim
     ];
- };
+  };
+
+  # https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
+  xdg.configFile."nvim/parser".source =
+    let
+      parsers = pkgs.symlinkJoin {
+        name = "treesitter-parsers";
+        paths = (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
+          c
+          lua
+        ])).dependencies;
+      };
+    in
+    "${parsers}/parser";
+
+  # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
+  xdg.configFile."nvim/lua".source = ./lua;
 }
