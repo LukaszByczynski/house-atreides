@@ -34,7 +34,7 @@ let
     };
 
   linuxAliases = if pkgs.stdenv.isLinux then {
-    "zed" = "flatpak run dev.zed.Zed";
+    #"zed" = "flatpak run dev.zed.Zed";
   } else {};
 
   aliases = baseAliases // linuxAliases;
