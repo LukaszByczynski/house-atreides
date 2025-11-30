@@ -20,6 +20,7 @@ in
   imports = builtins.concatMap import [
     ./common
     ./programs
+    ./programs-k8s
     ./programs-mbwork
   ];
 }
