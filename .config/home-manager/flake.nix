@@ -21,7 +21,6 @@
       # supported systems
       supportedSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
-        "x86_64-darwin"
         "aarch64-darwin"
       ];
 
@@ -71,12 +70,12 @@
       	};
 
         virmir = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.x86_64-darwin;
+          pkgs = legacyPackages.x86_64-linux;
           modules = [
-            ./osx.nix
+            ./linux-virmir.nix
           ];
           extraSpecialArgs = {
-            pkgs-unstable = unstablePackages.x86_64-darwin;
+            pkgs-unstable = unstablePackages.x86_64-linux;
           };
         };
 	
@@ -92,7 +91,6 @@
 
       };
       defaultPackage.x86_64-linux = self.homeConfigurations.szwagier.activationPackage;
-      defaultPackage.x86_64-darwin = self.homeConfigurations.virmir.activationPackage;
       defaultPackage.aarch64-darwin = self.homeConfigurations.mbair.activationPackage;
     };
 }
