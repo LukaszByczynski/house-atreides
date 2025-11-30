@@ -4,18 +4,8 @@ let
     home.packages = with pkgs; [
       pkgs-unstable.mc              # terminal file commander
       pkgs-unstable.btop            # better top
-      pkgs-unstable.kubectl         # k8s cli tool
-      pkgs-unstable.ctop            # monitoring docker containers
-      pkgs-unstable.dive            # A tool for exploring a docker image
-      pkgs-unstable.docker-client   # docker cli
-      pkgs-unstable.docker-compose  # docker compose
-      pkgs-unstable.colima          # container engine for docker
       pkgs-unstable.devenv          # development env tool
       pkgs-unstable.nil             # language server for NIX
-
-      pkgs-unstable.gopls           # go language server
-      pkgs-unstable.go-tools        # go-tools (static analyzer, etc)
-      pkgs-unstable.delve           # go debugger
 
       nix-tree        # look into nix-tree
       tldr            # better manual pages
@@ -51,43 +41,7 @@ let
         enableZshIntegration = true;
       };
 
-      lazygit = {
-        enable = true;
-        settings = {
-          gui.sidePanelWidth =  0.2; # gives you more space to show things side-by-side
-          git.pagers = [
-            {pager = "ydiff -p cat -s --wrap --width={{columnWidth}}";}
-          ];
-        };
-      };
-
-      # a shell extension that manages your environment
-      direnv = {
-        enable = true;
-        enableZshIntegration = true;
-        nix-direnv.enable = true;
-      };
-
       jq.enable = true;
-
-      # ssh config
-      ssh = {
-        enable = true;
-        enableDefaultConfig = false;
-        matchBlocks."*" = {
-          forwardAgent = false;
-          serverAliveInterval = 60;
-          serverAliveCountMax = 3;
-          compression = false;
-          addKeysToAgent = "no";
-          hashKnownHosts = false;
-          userKnownHostsFile = "~/.ssh/known_hosts";
-          controlMaster = "no";
-          controlPath = "~/.ssh/master-%r@%n:%p";
-          controlPersist = "no";
-        };
-        includes = ["local_config"];
-      };
 
       # modern ls
       eza = {
@@ -107,9 +61,6 @@ let
       # less
       less.enable = true;
 
-      #k9s
-      k9s.enable = true;
-
       # fuzzy search
       fzf = {
         enable = true;
@@ -119,10 +70,14 @@ let
     };
   };
 in [
+  ./direnv
+  ./docker
   ./git
   ./go
   ./helix
+  ./lazygit
   ./neovim
+  ./ssh
   ./starship
   ./zsh
   more
