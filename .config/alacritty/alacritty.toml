@@ -7,7 +7,7 @@ TERM = "xterm-256color"
 normal = { family = "Iosevka" }
 bold = { family = "Iosevka" }
 italic = { family = "Iosevka" }
-size = 16
+size = 14
 
 [window]
 padding.x = 14

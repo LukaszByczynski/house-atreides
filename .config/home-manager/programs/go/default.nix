@@ -7,6 +7,6 @@ in
     package = pkgs-unstable.go;
 
     enable = true;
-    goPath = ".go";
+    env.GOPATH = ".go";
   };
 }

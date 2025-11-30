@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   gitConfig = {
@@ -70,7 +70,7 @@ let
   rg = "${pkgs.ripgrep}/bin/rg";
 in
 {
-  home.packages = with pkgs.gitAndTools; [
+  home.packages = with pkgs;[
     delta         # a syntax-highlighting pager for git
     hub           # github command-line client
     tig           # diff and commit view
@@ -78,9 +78,6 @@ in
 
   programs.git ={
     enable = true;
-
-    extraConfig = gitConfig;
-    userName = "Lukasz Byczynski";
 
     ignores = [
       "*.bloop"
@@ -93,20 +90,23 @@ in
       "*.jvmopts"      # should be local to every project
     ];
 
-    aliases = {
-      amend = "commit --amend -m";
-      fixup = "!f(){ git reset --soft HEAD~\${1} && git commit --amend -C HEAD; };f";
-      loc   = "!f(){ git ls-files | ${rg} \"\\.\${1}\" | xargs wc -l; };f"; # lines of code
-      br = "branch";
-      co = "checkout";
-      st = "status";
-      ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
-      ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
-      cm = "commit -m";
-      ca = "commit -am";
-      dc = "diff --cached";
-      #prune-branches = "!git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D";
-      prune-branches = "!LANG=en_EN git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D";
+    settings = lib.recursiveUpdate gitConfig {
+      user.name = "Lukasz Byczynski";
+      aliases = {
+        amend = "commit --amend -m";
+        fixup = "!f(){ git reset --soft HEAD~\${1} && git commit --amend -C HEAD; };f";
+        loc   = "!f(){ git ls-files | ${rg} \"\\.\${1}\" | xargs wc -l; };f"; # lines of code
+        br = "branch";
+        co = "checkout";
+        st = "status";
+        ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
+        ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
+        cm = "commit -m";
+        ca = "commit -am";
+        dc = "diff --cached";
+        #prune-branches = "!git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D";
+        prune-branches = "!LANG=en_EN git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D";
+      };
     };
   };
 }
