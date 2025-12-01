@@ -21,6 +21,7 @@ in
       # force use nvidia vaapi driver for video decoding
       LIBVA_DRIVER_NAME = "nvidia";
       NVD_BACKEND = "direct";
+      GOPATH = "$HOME/.go";
       MOZ_DISABLE_RDD_SANDBOX = "1";
       LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
       GBM_BACKENDS_PATH2="${customNvidiaX11}/lib/gbm";

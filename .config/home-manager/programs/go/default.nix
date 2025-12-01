@@ -13,6 +13,5 @@ in
     package = pkgs-unstable.go;
 
     enable = true;
-    env.GOPATH = ".go";
   };
 }
