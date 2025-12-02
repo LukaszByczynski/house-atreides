@@ -2,6 +2,7 @@
 
   programs.alacritty = {
     enable = true;
+    package = pkgs.emptyDirectory;
     settings = {
       general = {
         import = [
