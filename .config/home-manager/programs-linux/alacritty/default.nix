@@ -15,7 +15,6 @@
         normal = { family = "Iosevka"; };
         bold = { family = "Iosevka"; };
         italic = { family = "Iosevka"; };
-        size = 14;
       };
       window = {
         padding = {
