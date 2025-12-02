@@ -6,6 +6,9 @@ let
   configHome = "${homeDirectory}/.config";
 in
 {
+  # use host GPU libs
+  targets.genericLinux.enable = true;
+  
   # Home Maanager needs a bit of information about you and the
   # paths it should manage.
   home = {

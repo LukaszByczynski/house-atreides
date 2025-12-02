@@ -4,14 +4,12 @@ let
   username = "lukaszb";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
-
-  customNvidiaX11 = pkgs-unstable.linuxPackages.nvidia_x11_production.override {
-    libsOnly = true;
-    disable32Bit = false;
-  };
-
 in
 {
+
+  # use host GPU libs
+  targets.genericLinux.enable = true;
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home = {
@@ -23,8 +21,6 @@ in
       NVD_BACKEND = "direct";
       GOPATH = "$HOME/.go";
       MOZ_DISABLE_RDD_SANDBOX = "1";
-      LD_LIBRARY_PATH="${customNvidiaX11}/lib:$LD_LIBRARY_PATH";
-      GBM_BACKENDS_PATH2="${customNvidiaX11}/lib/gbm";
       DOCKER_HOST="unix://$HOME/.config/colima/docker.sock";
     };
   };
