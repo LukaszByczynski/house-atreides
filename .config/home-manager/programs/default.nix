@@ -3,7 +3,6 @@ let
 
     home.packages = with pkgs; [
       pkgs-unstable.mc              # terminal file commander
-      pkgs-unstable.btop            # better top
       pkgs-unstable.devenv          # development env tool
       pkgs-unstable.nil             # language server for NIX
 
