@@ -6,6 +6,7 @@ let
       nix-du      # track disk usage by nix roots
       lnav        # better logs navigator
 
+      pkgs-unstable.devenv          # development env tool
       pkgs-unstable.claude-code
     ];
 
