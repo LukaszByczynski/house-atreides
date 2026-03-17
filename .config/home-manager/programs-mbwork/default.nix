@@ -4,7 +4,7 @@ let
     home.packages = with pkgs; [
       pkgs-unstable.btop    # better top
       google-cloud-sdk      # gcloud sdk
-      pkgs.devenv           # development env tool
+      pkgs-unstable.devenv           # development env tool
     ];
   };
 in [
