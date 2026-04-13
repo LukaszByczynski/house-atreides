@@ -40,3 +40,6 @@ devenv.local.nix
 
 # pre-commit
 .pre-commit-config.yaml
+
+*.pyc
+.claude/settings.local.json
