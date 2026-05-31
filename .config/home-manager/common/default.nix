@@ -5,7 +5,7 @@ let
     home = {
       # The state version is required and should stay at the version you
       # originally installed.
-      stateVersion = "23.11";
+      stateVersion = "26.05";
 
       sessionVariables = {
         # DISPLAY = ":0";

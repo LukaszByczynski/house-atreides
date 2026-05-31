@@ -16,7 +16,7 @@ in
       ripgrep
     ];
 
-    extraLuaConfig =
+    initLua =
       let
         plugins = with pkgs.vimPlugins; [
           # LazyVim
