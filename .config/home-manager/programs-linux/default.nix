@@ -8,6 +8,7 @@ let
 
       pkgs-unstable.devenv          # development env tool
       pkgs-unstable.claude-code
+      pkgs-unstable.rtk
     ];
 
     programs.bash = {
