@@ -5,6 +5,7 @@ let
       pkgs-unstable.claude-code
       pkgs-unstable.btop            # better top
       pkgs-unstable.devenv          # development env tool
+      pkgs-unstable.rtk
     ];
   };
 in [
