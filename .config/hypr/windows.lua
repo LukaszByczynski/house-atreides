@@ -11,7 +11,8 @@ o.window("steam", { opacity = "1 1" })
 o.window("steam", { idle_inhibit = "fullscreen" })
 o.window("steam", { no_initial_focus = true })
 o.window({ class = "steam", title = "^(notificationtoasts).*" }, { no_focus = true })
-
+o.window("steam_app_.*", { idle_inhibit = "fullscreen" })
+o.window({ initial_class = "^(steam).*" }, { idle_inhibit = "fullscreen" })
 o.window({ class = "^(window)$" }, { workspace = "5 silent" })
 
 -- Master layout on workspace 0.
