@@ -3,20 +3,10 @@ let
 
     home.packages = with pkgs; [
       wrk2        # perf test
-      nix-du      # track disk usage by nix roots
-      lnav        # better logs navigator
-
-      pkgs-unstable.devenv          # development env tool
-      pkgs-unstable.claude-code
-      pkgs-unstable.rtk
     ];
 
     programs.bash = {
       enable = true;
-
-      #profileExtra = ''
-      #[[ -f ~/.bashrc ]] && . ~/.bashrc
-      #'';
 
       bashrcExtra = ''
       # Omarchy environment (OMARCHY_PATH + PATH), needed even for non-interactive shells

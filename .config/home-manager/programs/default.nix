@@ -4,8 +4,11 @@ let
     home.packages = with pkgs; [
       pkgs-unstable.mc              # terminal file commander
       pkgs-unstable.nil             # language server for NIX
+      pkgs-unstable.rtk
+      pkgs-unstable.herdr
+      pkgs-unstable.lnav
+      pkgs-unstable.devenv
 
-      nix-tree        # look into nix-tree
       tldr            # better manual pages
       p7zip           # packer
       duf             # pretty disk usage
@@ -22,7 +25,7 @@ let
 
     programs = {
 
-      #asciinema.enable = true;
+      asciinema.enable = true;
 
       # recursive grep
       ripgrep.enable = true;
@@ -33,11 +36,26 @@ let
       # cat replacement
       bat.enable = true;
 
+      # btop
+      btop.enable = true;
+
       # an interactive tree view,
       broot = {
         enable = true;
         enableZshIntegration = true;
       };
+
+      # claude-code
+      claude-code.enable = true;
+
+      # devenv
+      #devenv = {
+      #  enable = true;
+      #  enableZshIntegration = true;
+      #};
+
+      # herdr
+      #herdr.enable = true;
 
       jq.enable = true;
 
@@ -58,6 +76,12 @@ let
 
       # less
       less.enable = true;
+
+      # better logs navigator
+      #lnav.eanble = true;
+
+      # mise
+      mise.enable = true;
 
       # fuzzy search
       fzf = {
