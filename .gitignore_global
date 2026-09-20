@@ -43,3 +43,5 @@ devenv.local.nix
 
 *.pyc
 .claude/settings.local.json
+
+**/.claude/settings.local.json
