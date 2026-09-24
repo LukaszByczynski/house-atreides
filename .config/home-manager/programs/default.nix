@@ -46,7 +46,10 @@ let
       };
 
       # claude-code
-      claude-code.enable = true;
+      claude-code = {
+        package = pkgs-unstable.claude-code;
+        enable = true;
+      };
 
       # devenv
       #devenv = {
@@ -81,7 +84,10 @@ let
       #lnav.eanble = true;
 
       # mise
-      mise.enable = true;
+      mise = {
+        package = pkgs-unstable.mise;
+        enable = true;
+      };
 
       # fuzzy search
       fzf = {
