@@ -4,7 +4,6 @@ let
     home.packages = with pkgs; [
       pkgs-unstable.mc              # terminal file commander
       pkgs-unstable.nil             # language server for NIX
-      pkgs-unstable.rtk
       pkgs-unstable.herdr
       pkgs-unstable.lnav
       pkgs-unstable.devenv

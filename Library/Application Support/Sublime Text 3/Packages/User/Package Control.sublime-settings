@@ -59,5 +59,18 @@
 	],
 	"in_process_packages":
 	[
+		"A File Icon",
+		"Compare Side-By-Side",
+		"GitSavvy",
+		"LSP",
+		"LSP-gopls",
+		"LSP-metals",
+		"LSP-rust-analyzer",
+		"LSP-typescript",
+		"LSP-vue",
+		"MarkdownTOC",
+		"OpenAI completion",
+		"SideBarTools",
+		"UnitTesting",
 	],
 }
