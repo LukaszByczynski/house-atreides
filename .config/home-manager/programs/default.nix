@@ -4,7 +4,6 @@ let
     home.packages = with pkgs; [
       pkgs-unstable.mc              # terminal file commander
       pkgs-unstable.nil             # language server for NIX
-      pkgs-unstable.herdr
       pkgs-unstable.lnav
       pkgs-unstable.devenv
 
@@ -56,9 +55,6 @@ let
       #  enableZshIntegration = true;
       #};
 
-      # herdr
-      #herdr.enable = true;
-
       jq.enable = true;
 
       # modern ls
@@ -102,6 +98,7 @@ in [
   ./git
   ./go
   ./helix
+  ./herdr
   ./lazygit
   ./neovim
   ./ssh
