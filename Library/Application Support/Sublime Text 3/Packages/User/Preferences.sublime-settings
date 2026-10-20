@@ -58,4 +58,7 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"color_scheme": "Mariana.sublime-color-scheme",
+	"file_icon_theme":
+	[
+	],
 }
