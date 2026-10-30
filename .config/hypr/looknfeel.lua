@@ -29,6 +29,11 @@ hl.config({
     font_family = "Iosevka",
   },
 
+  render = {
+    -- Don't auto-switch to HDR when a fullscreen app is HDR (0 = disable).
+    cm_auto_hdr = 0,
+  },
+
   group = {
     groupbar = {
       font_size = 14,
