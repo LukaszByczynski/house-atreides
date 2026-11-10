@@ -44,10 +44,10 @@ let
       };
 
       # claude-code
-      claude-code = {
-        package = pkgs-unstable.claude-code;
-        enable = true;
-      };
+      #claude-code = {
+      #  package = pkgs-unstable.claude-code;
+      #  enable = true;
+      #};
 
       # devenv
       #devenv = {
@@ -96,7 +96,6 @@ in [
   ./direnv
   ./docker
   ./git
-  ./go
   ./helix
   ./herdr
   ./lazygit
