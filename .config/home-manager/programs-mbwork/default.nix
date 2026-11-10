@@ -3,7 +3,6 @@ let
 
     home.packages = with pkgs; [
       sqlite
-      mactop
       awscli2
       google-cloud-sql-proxy
       google-cloud-sdk      # gcloud sdk
